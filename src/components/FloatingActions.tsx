@@ -11,58 +11,11 @@ export default function FloatingActions() {
 
   return (
     <>
-      {/* Desktop floating buttons */}
-      <div className="fixed bottom-6 right-6 z-40 hidden flex-col gap-3 lg:flex">
-        <button
-          onClick={() => setIsEstimatorOpen(true)}
-          className={`group relative flex h-14 w-14 items-center justify-center rounded-full bg-gold-400 text-navy-900 shadow-xl shadow-gold-500/30 transition-all duration-300 hover:scale-110 ${isEstimatorOpen ? 'scale-0 opacity-0 hidden' : 'scale-100 opacity-100'}`}
-          aria-label="Trip Cost Estimator"
-        >
-          <Calculator className="relative h-6 w-6" strokeWidth={2.5} />
-          <span className="absolute right-16 whitespace-nowrap rounded-lg bg-navy-900 px-3 py-1.5 text-sm font-medium text-white opacity-0 transition-opacity group-hover:opacity-100">
-            Cost Estimator
-          </span>
-        </button>
-        <button
-          onClick={() => setIsChatOpen(true)}
-          className={`group relative flex h-14 w-14 items-center justify-center rounded-full bg-[#111317] text-gold-400 ring-[4px] ring-gray-400/80 shadow-xl shadow-black/30 transition-all duration-300 hover:scale-110 ${isChatOpen ? 'scale-0 opacity-0 hidden' : 'scale-100 opacity-100'}`}
-          aria-label="AI Assistant"
-        >
-          <Bot className="relative h-7 w-7" strokeWidth={2.5} />
-          <span className="absolute right-16 whitespace-nowrap rounded-lg bg-navy-900 px-3 py-1.5 text-sm font-medium text-white opacity-0 transition-opacity group-hover:opacity-100">
-            GARUDA AI
-          </span>
-        </button>
-        <a
-          href="https://wa.me/918122552280?text=Hi%20BEST%20TRAVELS,%20I%20have%20an%20enquiry"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="WhatsApp us"
-          className="group relative flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white shadow-xl shadow-green-500/30 transition-all hover:scale-110"
-        >
-          <span className="absolute inset-0 rounded-full bg-green-500 animate-[pulse-ring_2s_ease-out_infinite]" />
-          <WhatsAppIcon className="relative h-7 w-7" />
-          <span className="absolute right-16 whitespace-nowrap rounded-lg bg-navy-900 px-3 py-1.5 text-sm font-medium text-white opacity-0 transition-opacity group-hover:opacity-100">
-            Chat on WhatsApp
-          </span>
-        </a>
+      {/* Sticky Action Bar (Floats on Desktop, Bottom sticky on Mobile) */}
+      <div className="fixed bottom-0 left-0 right-0 z-40 grid grid-cols-5 border-t border-navy-100 bg-white shadow-[0_-8px_30px_rgba(0,0,0,0.08)] transition-all duration-300">
         <a
           href="tel:+918122552280"
-          aria-label="Call us"
-          className="group relative flex h-14 w-14 items-center justify-center rounded-full bg-navy-700 text-white shadow-xl shadow-navy-700/30 transition-all hover:scale-110"
-        >
-          <Phone className="h-6 w-6" />
-          <span className="absolute right-16 whitespace-nowrap rounded-lg bg-navy-900 px-3 py-1.5 text-sm font-medium text-white opacity-0 transition-opacity group-hover:opacity-100">
-            Call Now
-          </span>
-        </a>
-      </div>
-
-      {/* Mobile sticky bottom bar */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 grid grid-cols-5 border-t border-navy-100 bg-white shadow-2xl lg:hidden">
-        <a
-          href="tel:+918122552280"
-          className="flex flex-col items-center gap-1 py-3 text-navy-700 transition-colors hover:bg-navy-50 border-r border-navy-100"
+          className="flex flex-col items-center justify-center gap-1 py-4 text-navy-700 transition-colors hover:bg-navy-50 border-r border-navy-100"
         >
           <Phone className="h-5 w-5" />
           <span className="text-[10px] font-semibold">CALL</span>
@@ -71,21 +24,21 @@ export default function FloatingActions() {
           href="https://wa.me/918122552280?text=Hi%20BEST%20TRAVELS,%20I%20have%20an%20enquiry"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex flex-col items-center gap-1 py-3 text-green-600 transition-colors hover:bg-green-50 border-r border-navy-100"
+          className="flex flex-col items-center justify-center gap-1 py-4 text-green-600 transition-colors hover:bg-green-50 border-r border-navy-100"
         >
           <WhatsAppIcon className="h-5 w-5" />
           <span className="text-[10px] font-semibold">WHATSAPP</span>
         </a>
         <button
           onClick={() => setIsEstimatorOpen(true)}
-          className="flex flex-col items-center gap-1 py-3 text-gold-600 transition-colors hover:bg-gold-50 border-r border-navy-100"
+          className="flex flex-col items-center justify-center gap-1 py-4 text-gold-600 transition-colors hover:bg-gold-50 border-r border-navy-100"
         >
           <Calculator className="h-5 w-5" />
           <span className="text-[10px] font-semibold">ESTIMATE</span>
         </button>
         <button
           onClick={() => setIsChatOpen(true)}
-          className="flex flex-col items-center gap-1 py-3 text-navy-900 transition-colors hover:bg-navy-50"
+          className="flex flex-col items-center justify-center gap-1 py-4 text-navy-900 transition-colors hover:bg-navy-50"
         >
           <Bot className="h-5 w-5" />
           <span className="text-[10px] font-semibold">GARUDA AI</span>
@@ -93,7 +46,7 @@ export default function FloatingActions() {
 
         <Link
           to="/contact"
-          className="flex flex-col items-center gap-1 bg-gradient-to-r from-gold-400 to-gold-500 py-3 text-navy-900"
+          className="flex flex-col items-center justify-center gap-1 bg-gradient-to-r from-gold-400 to-gold-500 py-4 text-navy-900 transition-colors hover:font-extrabold"
         >
           <Calendar className="h-5 w-5" />
           <span className="text-[10px] font-bold">BOOK NOW</span>
