@@ -54,7 +54,14 @@ export default function VehicleDetailPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (location.hash === '#quick-reservation') {
+      setTimeout(() => {
+        document.getElementById('quick-reservation')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 300);
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
     if (vehicle) {
       document.title = `Book ${vehicle.name} (${vehicle.type}) | GARUDA TRAVELS Madurai`;
       setBookingForm((prev) => ({

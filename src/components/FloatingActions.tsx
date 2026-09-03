@@ -120,7 +120,7 @@ export default function FloatingActions() {
             <X className="h-6 w-6" />
           </button>
 
-          <TripCostEstimator />
+          <TripCostEstimator onClose={() => setIsEstimatorOpen(false)} />
         </div>
       </div>
     </>

@@ -1,8 +1,13 @@
 import { useState } from 'react';
-import { Calculator } from 'lucide-react';
+import { Calculator, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { vehicles } from '@/data/mockData';
 
-export default function TripCostEstimator() {
+interface Props {
+    onClose?: () => void;
+}
+
+export default function TripCostEstimator({ onClose }: Props = {}) {
     const [distance, setDistance] = useState(0);
     const [duration, setDuration] = useState(1);
     const [selectedVehicleId, setSelectedVehicleId] = useState(vehicles[0].id);
@@ -126,6 +131,17 @@ export default function TripCostEstimator() {
                     </div>
                     <p className="text-base text-white mt-1">+ ₹{driverBeta} Driver beta</p>
                 </div>
+            </div>
+
+            <div className="mt-8">
+                <Link
+                    to={`/vehicles/${selectedVehicleId}#quick-reservation`}
+                    onClick={onClose}
+                    className="group flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-gold-400 to-gold-500 py-4 text-base font-bold text-navy-900 shadow-md transition-all hover:scale-[1.01] hover:shadow-lg active:scale-95"
+                >
+                    <span>Proceed to Book & Reserve</span>
+                    <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </Link>
             </div>
         </div >
     );
