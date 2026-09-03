@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingActions from '@/components/FloatingActions';
+import WelcomePopup from '@/components/WelcomePopup';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const location = useLocation();
@@ -17,6 +18,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <main className="pt-0">{children}</main>
       <Footer />
       <FloatingActions />
+      <WelcomePopup />
       {/* Spacer for mobile bottom bar */}
       <div className="h-16 lg:hidden" />
     </div>

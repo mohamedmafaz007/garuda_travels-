@@ -26,9 +26,9 @@ export default function HomePage() {
     <>
       <Hero />
       <AboutSection />
+      <FleetSection onBook={setSelectedVehicle} limit={4} />
       <DestinationExplorer limit={6} />
       <Packages onViewDetails={setSelectedPackage} limit={3} />
-      <FleetSection onBook={setSelectedVehicle} limit={4} />
       <CabBooking />
       <WhyChooseUs />
       <HowItWorks />

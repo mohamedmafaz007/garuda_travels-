@@ -101,16 +101,19 @@ export default function Packages({ onViewDetails, limit }: { onViewDetails: (pkg
           </h2>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {displayPackages.map((pkg, i) => (
-            <div
-              key={pkg.id}
-              className={`reveal ${revealed ? 'revealed' : ''}`}
-              style={{ transitionDelay: `${i * 0.05}s` }}
-            >
-              <PackageCard pkg={pkg} onViewDetails={onViewDetails} />
-            </div>
-          ))}
+        {/* Packages Marquee */}
+        <div className="mt-14 relative flex overflow-hidden">
+          {/* We use double elements to create loop */}
+          <div className="flex w-max animate-marquee gap-6 hover:[animation-play-state:paused] pb-10 pt-4 px-2">
+            {[...displayPackages, ...displayPackages].map((pkg, i) => (
+              <div
+                key={`${pkg.id}-${i}`}
+                className="w-[90vw] sm:w-[45vw] lg:w-[30vw] shrink-0"
+              >
+                <PackageCard pkg={pkg} onViewDetails={onViewDetails} />
+              </div>
+            ))}
+          </div>
         </div>
 
         {limit && (
