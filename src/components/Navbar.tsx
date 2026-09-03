@@ -7,13 +7,13 @@ import { destinations, packages } from '@/data/mockData';
 const navLinks = [
   { label: 'HOME', path: '/' },
   { label: 'ABOUT', path: '/about' },
-  { 
-    label: 'DESTINATIONS', 
+  {
+    label: 'DESTINATIONS',
     path: '/destinations',
     dropdown: destinations.map(d => ({ label: d.name, path: `/destinations/${d.id}` }))
   },
-  { 
-    label: 'TOUR PACKAGES', 
+  {
+    label: 'TOUR PACKAGES',
     path: '/packages',
     dropdown: packages.map(p => ({ label: p.title, path: `/packages/${p.id}` }))
   },
@@ -66,13 +66,12 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          transparent
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${transparent
             ? 'bg-transparent py-4'
             : 'glass-light shadow-lg shadow-navy-900/5 py-2'
-        }`}
+          }`}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-[90rem] items-center justify-between px-4 sm:px-6 lg:px-8">
           <Link to="/" aria-label="GARUDA TRAVELS home">
             <Logo light={transparent} size="md" />
           </Link>
@@ -82,15 +81,14 @@ export default function Navbar() {
               const isActive = location.pathname === link.path.split('#')[0] && link.path !== '/#cab-booking' && link.path !== '/#faq';
               const content = (
                 <span
-                  className={`flex items-center gap-1 whitespace-nowrap rounded-lg px-3 py-2 text-xs font-semibold tracking-wide transition-colors ${
-                    isActive
+                  className={`flex items-center gap-1 whitespace-nowrap rounded-lg px-3 py-2 text-xs font-semibold tracking-wide transition-colors ${isActive
                       ? transparent
                         ? 'text-gold-300'
                         : 'text-gold-600'
                       : transparent
                         ? 'text-white/90 hover:text-gold-300'
                         : 'text-navy-700 hover:text-gold-600'
-                  }`}
+                    }`}
                 >
                   {link.label}
                   {link.dropdown && <ChevronDown className="h-3 w-3 opacity-70" />}
@@ -140,9 +138,8 @@ export default function Navbar() {
 
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className={`flex h-10 w-10 items-center justify-center rounded-xl transition-colors lg:hidden ${
-              transparent ? 'glass text-white' : 'bg-navy-50 text-navy-800'
-            }`}
+            className={`flex h-10 w-10 items-center justify-center rounded-xl transition-colors lg:hidden ${transparent ? 'glass text-white' : 'bg-navy-50 text-navy-800'
+              }`}
             aria-label="Toggle menu"
           >
             {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -152,18 +149,16 @@ export default function Navbar() {
 
       {/* Mobile drawer */}
       <div
-        className={`fixed inset-0 z-[60] lg:hidden transition-all duration-300 ${
-          mobileOpen ? 'visible opacity-100' : 'invisible opacity-0'
-        }`}
+        className={`fixed inset-0 z-[60] lg:hidden transition-all duration-300 ${mobileOpen ? 'visible opacity-100' : 'invisible opacity-0'
+          }`}
       >
         <div
           className="absolute inset-0 bg-navy-950/60 backdrop-blur-sm"
           onClick={() => setMobileOpen(false)}
         />
         <div
-          className={`absolute right-0 top-0 h-full w-80 max-w-[85%] overflow-y-auto bg-white shadow-2xl transition-transform duration-300 ${
-            mobileOpen ? 'translate-x-0' : 'translate-x-full'
-          }`}
+          className={`absolute right-0 top-0 h-full w-80 max-w-[85%] overflow-y-auto bg-white shadow-2xl transition-transform duration-300 ${mobileOpen ? 'translate-x-0' : 'translate-x-full'
+            }`}
         >
           <div className="flex items-center justify-between border-b border-navy-100 px-6 py-4">
             <Logo size="sm" />

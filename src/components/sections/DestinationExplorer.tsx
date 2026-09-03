@@ -17,8 +17,21 @@ export default function DestinationExplorer({ limit }: { limit?: number }) {
   ).slice(0, limit);
 
   return (
-    <section ref={ref} className="bg-ivory py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section ref={ref} className="relative bg-ivory py-20 lg:py-28 overflow-hidden">
+      {/* Decorative Background Elements */}
+      <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold-200/40 blur-[100px] w-[500px] h-[500px] pointer-events-none" />
+      <div className="absolute bottom-0 right-0 translate-x-1/3 translate-y-1/3 rounded-full bg-navy-200/30 blur-[120px] w-[600px] h-[600px] pointer-events-none" />
+      <div className="absolute inset-0 opacity-[0.02] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#1d222e 1.5px, transparent 1.5px)', backgroundSize: '32px 32px' }} />
+      
+      {/* Subtle South Indian Mandala Motif on sides */}
+      <svg className="absolute -left-32 top-40 w-96 h-96 opacity-[0.03] pointer-events-none text-navy-900" viewBox="0 0 100 100" fill="currentColor">
+        <path d="M50 0 L54 10 L64 6 L60 16 L70 18 L62 26 L74 34 L64 38 L72 48 L60 46 L62 58 L52 50 L48 60 L42 50 L38 58 L40 46 L28 48 L36 38 L26 34 L38 26 L30 18 L40 16 L36 6 L46 10 Z" />
+      </svg>
+      <svg className="absolute -right-32 bottom-20 w-96 h-96 opacity-[0.03] pointer-events-none text-navy-900" viewBox="0 0 100 100" fill="currentColor">
+        <path d="M50 0 L54 10 L64 6 L60 16 L70 18 L62 26 L74 34 L64 38 L72 48 L60 46 L62 58 L52 50 L48 60 L42 50 L38 58 L40 46 L28 48 L36 38 L26 34 L38 26 L30 18 L40 16 L36 6 L46 10 Z" />
+      </svg>
+
+      <div className="relative z-10 mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-8">
         <div className={`reveal ${revealed ? 'revealed' : ''} mx-auto max-w-2xl text-center`}>
           <span className="text-sm font-bold tracking-[0.2em] text-gold-600 uppercase">Destinations</span>
           <h2 className="mt-3 font-display text-3xl font-bold text-navy-800 sm:text-4xl lg:text-5xl text-balance">

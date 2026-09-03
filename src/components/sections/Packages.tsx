@@ -61,7 +61,6 @@ export function PackageCard({ pkg, onViewDetails }: { pkg: Package; onViewDetail
             href={`https://wa.me/918122552280?text=${encodeURIComponent(`Hi GARUDA TRAVELS, I want to book the "${pkg.title}" tour package!\n\nDuration: ${pkg.duration}\nStarting Price: ₹${pkg.price.toLocaleString('en-IN')}\nHighlights: ${pkg.highlights.join(', ')}\n\nPlease share availability and confirm timings.`)}`}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => showToast(`Opening WhatsApp to book ${pkg.title} (+91 81225 52280)...`)}
             className="flex-1 flex items-center justify-center rounded-xl bg-gradient-to-r from-gold-400 to-gold-500 px-4 py-3 text-sm font-bold text-navy-900 transition-all hover:shadow-lg hover:shadow-gold-500/30 text-center"
           >
             Book Now
@@ -77,8 +76,24 @@ export default function Packages({ onViewDetails, limit }: { onViewDetails: (pkg
   const displayPackages = limit ? packages.slice(0, limit) : packages;
 
   return (
-    <section ref={ref} className="bg-white py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section ref={ref} className="relative bg-white py-20 lg:py-28 overflow-hidden">
+      {/* Decorative Background Elements */}
+      <div className="absolute top-40 right-0 translate-x-1/3 rounded-[100%] bg-gold-100/50 blur-[80px] w-[600px] h-[400px] pointer-events-none transform rotate-12" />
+      <div className="absolute bottom-20 left-0 -translate-x-1/4 rounded-[100%] bg-blue-50/60 blur-[100px] w-[500px] h-[500px] pointer-events-none" />
+
+      {/* Vector Line Art */}
+      <svg className="absolute -right-20 top-20 w-80 h-80 opacity-5 pointer-events-none text-navy-900 twist" viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="2">
+        <circle cx="100" cy="100" r="80" strokeDasharray="4 4" />
+        <circle cx="100" cy="100" r="60" />
+        <circle cx="100" cy="100" r="40" strokeDasharray="4 4" />
+      </svg>
+      <svg className="absolute -left-20 bottom-40 w-72 h-72 opacity-5 pointer-events-none text-navy-900" viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="1">
+        <path d="M0,100 Q50,50 100,100 T200,100" fill="none" />
+        <path d="M0,120 Q50,70 100,120 T200,120" fill="none" />
+        <path d="M0,140 Q50,90 100,140 T200,140" fill="none" />
+      </svg>
+
+      <div className="relative z-10 mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-8">
         <div className={`reveal ${revealed ? 'revealed' : ''} mx-auto max-w-2xl text-center`}>
           <span className="text-sm font-bold tracking-[0.2em] text-gold-600 uppercase">Tour Packages</span>
           <h2 className="mt-3 font-display text-3xl font-bold text-navy-800 sm:text-4xl lg:text-5xl text-balance">

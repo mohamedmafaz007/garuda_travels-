@@ -5,7 +5,7 @@ import Logo from './Logo';
 export default function Footer() {
   return (
     <footer className="bg-navy-950 text-navy-200">
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-[90rem] px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {/* Column 1 */}
           <div>
@@ -94,18 +94,20 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-            <div className="mt-5 space-y-2">
-              <a href="tel:+918122552280" className="flex items-center gap-2 text-sm text-navy-300 hover:text-gold-400 transition-colors">
-                <Phone className="h-4 w-4" /> +91 81225 52280
+            <div className="mt-5 space-y-3">
+              <a href="tel:+918122552280" className="flex items-start gap-3 text-sm text-navy-300 hover:text-gold-400 transition-colors">
+                <Phone className="h-4 w-4 shrink-0 mt-0.5" />
+                <span>+91 81225 52280</span>
               </a>
-              <a href="mailto:garudatravels@gmail.com" className="flex items-center gap-2 text-sm text-navy-300 hover:text-gold-400 transition-colors">
-                <Mail className="h-4 w-4" /> garudatravels@gmail.com
+              <a href="mailto:garudatravels@gmail.com" className="flex items-start gap-3 text-sm text-navy-300 hover:text-gold-400 transition-colors">
+                <Mail className="h-4 w-4 shrink-0 mt-0.5" />
+                <span>garudatravels@gmail.com</span>
               </a>
               <a
                 href="https://www.google.com/maps/search/?api=1&query=5%2F434-D%2C+Thiruvalluvar+Nagar%2C+Thirunagar%2C+Madurai+-+625006"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-start gap-2 text-sm text-navy-300 hover:text-gold-400 transition-colors"
+                className="flex items-start gap-3 text-sm text-navy-300 hover:text-gold-400 transition-colors"
               >
                 <MapPin className="h-4 w-4 shrink-0 text-gold-400 mt-0.5" />
                 <span>5/434-D, Thiruvalluvar Nagar, Thirunagar, Madurai - 625006</span>

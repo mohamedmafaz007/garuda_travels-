@@ -14,7 +14,7 @@ export default function ReviewsPage() {
     <div className="pt-16">
       <div className="relative h-[40vh] min-h-[300px] overflow-hidden bg-navy-900">
         <img
-          src="https://images.pexels.com/photos/11959990/pexels-photo-11959990.jpeg?auto=compress&cs=tinysrgb&w=1920&h=600&fit=crop"
+          src="https://images.pexels.com/photos/11959990/pexels-photo-11959990.jpeg?auto=compress&cs=tinysrgb&w=1920&q=90"
           alt="Family at Kanyakumari sunset"
           className="h-full w-full object-cover opacity-60"
         />

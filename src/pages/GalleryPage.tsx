@@ -13,7 +13,7 @@ export default function GalleryPage() {
     <div className="pt-16">
       <div className="relative h-[40vh] min-h-[300px] overflow-hidden bg-navy-900">
         <img
-          src="https://images.pexels.com/photos/29988973/pexels-photo-29988973.jpeg?auto=compress&cs=tinysrgb&w=1920&h=600&fit=crop"
+          src="https://images.pexels.com/photos/29988973/pexels-photo-29988973.jpeg?auto=compress&cs=tinysrgb&w=1920&q=90"
           alt="Kerala backwaters"
           className="h-full w-full object-cover opacity-60"
         />

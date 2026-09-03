@@ -13,7 +13,7 @@ export default function Services() {
 
   return (
     <section ref={ref} className="bg-white py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-8">
         <div className={`reveal ${revealed ? 'revealed' : ''} mx-auto max-w-2xl text-center`}>
           <span className="text-sm font-bold tracking-[0.2em] text-gold-600 uppercase">Our Services</span>
           <h2 className="mt-3 font-display text-3xl font-bold text-navy-800 sm:text-4xl lg:text-5xl text-balance">

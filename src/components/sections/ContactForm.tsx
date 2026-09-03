@@ -52,8 +52,20 @@ export default function ContactForm() {
   };
 
   return (
-    <section ref={ref} className="bg-white py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section ref={ref} className="relative overflow-hidden bg-white py-20 lg:py-28">
+      {/* Glow effects */}
+      <div className="absolute top-0 right-0 translate-x-1/3 -translate-y-1/3 w-[600px] h-[600px] bg-gold-100/50 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 -translate-x-1/3 translate-y-1/3 w-[600px] h-[600px] bg-blue-50/50 rounded-full blur-[120px] pointer-events-none" />
+
+      {/* Background vectors */}
+      <svg className="absolute -left-20 top-1/4 w-80 h-80 opacity-5 pointer-events-none text-navy-900" viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="1">
+        <path d="M 0 100 Q 50 20 100 100 T 200 100 M 0 120 Q 50 40 100 120 T 200 120" />
+      </svg>
+      <svg className="absolute -right-20 bottom-1/4 w-80 h-80 opacity-5 pointer-events-none text-navy-900" viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="1">
+        <path d="M 0 100 Q 50 20 100 100 T 200 100 M 0 120 Q 50 40 100 120 T 200 120" />
+      </svg>
+
+      <div className="relative z-10 mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Left: Info */}
           <div className={`reveal ${revealed ? 'revealed' : ''}`}>
@@ -193,7 +205,7 @@ export default function ContactForm() {
                         onChange={(e) => setForm({ ...form, travelers: e.target.value })}
                         className="rounded-xl border border-navy-200 bg-white px-4 py-3 text-sm font-medium text-navy-800 outline-none transition-all focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20"
                       >
-                        {[1,2,3,4,5,6,7,8,9].map((n) => (
+                        {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((n) => (
                           <option key={n} value={n}>{n} {n === 1 ? 'Person' : 'People'}</option>
                         ))}
                         <option value="10+">10+ People</option>
@@ -226,3 +238,4 @@ export default function ContactForm() {
     </section>
   );
 }
+

@@ -143,8 +143,23 @@ export default function FleetSection({ onBook, limit }: { onBook: (v: Vehicle) =
   ).slice(0, limit);
 
   return (
-    <section ref={ref} id="fleet" className="bg-ivory py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section ref={ref} id="fleet" className="relative bg-ivory py-20 lg:py-28 overflow-hidden">
+      {/* Decorative Background Elements */}
+      <div className="absolute top-10 left-10 -translate-x-1/3 rounded-full bg-navy-200/40 blur-[120px] w-[600px] h-[600px] pointer-events-none" />
+      <div className="absolute bottom-10 right-10 translate-x-1/3 rounded-full bg-gold-200/40 blur-[130px] w-[700px] h-[700px] pointer-events-none" />
+      <div className="absolute inset-0 opacity-[0.025] pointer-events-none" style={{ backgroundImage: 'linear-gradient(45deg, #1d222e 10%, transparent 10%, transparent 50%, #1d222e 50%, #1d222e 60%, transparent 60%, transparent 100%)', backgroundSize: '20px 20px' }} />
+
+      {/* Subtle Vector Graphics */}
+      <svg className="absolute -left-32 top-1/2 -translate-y-1/2 w-[500px] h-[500px] opacity-[0.03] pointer-events-none text-navy-900" viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="1">
+        <circle cx="100" cy="100" r="80" />
+        <circle cx="100" cy="100" r="60" strokeDasharray="10 5" />
+        <path d="M100 20 L100 180 M20 100 L180 100" />
+      </svg>
+      <svg className="absolute -right-32 top-1/3 w-[400px] h-[400px] opacity-[0.03] pointer-events-none text-navy-900" viewBox="0 0 200 200" fill="currentColor">
+        <polygon points="100,10 40,198 190,78 10,78 160,198" fillRule="evenodd" />
+      </svg>
+
+      <div className="relative z-10 mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-8">
         <div className={`reveal ${revealed ? 'revealed' : ''} mx-auto max-w-2xl text-center`}>
           <span className="text-sm font-bold tracking-[0.2em] text-gold-600 uppercase">Our Fleet</span>
           <h2 className="mt-3 font-display text-3xl font-bold text-navy-800 sm:text-4xl lg:text-5xl text-balance">
@@ -160,11 +175,10 @@ export default function FleetSection({ onBook, limit }: { onBook: (v: Vehicle) =
             <button
               key={t}
               onClick={() => setActiveType(t)}
-              className={`rounded-full px-5 py-2.5 text-xs font-bold tracking-wide transition-all ${
-                activeType === t
+              className={`rounded-full px-5 py-2.5 text-xs font-bold tracking-wide transition-all ${activeType === t
                   ? 'bg-navy-800 text-white shadow-lg'
                   : 'bg-white text-navy-600 border border-navy-200 hover:border-gold-300 hover:text-navy-800'
-              }`}
+                }`}
             >
               {t}
             </button>

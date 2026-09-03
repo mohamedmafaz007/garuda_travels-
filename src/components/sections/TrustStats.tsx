@@ -47,8 +47,12 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
 
 export default function TrustStats() {
   return (
-    <section className="bg-white pt-16 pb-10 lg:pb-12">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="relative bg-white pt-16 pb-10 lg:pb-12 overflow-hidden">
+      {/* Decorative Orbs & Vectors */}
+      <div className="absolute left-0 top-0 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gold-200/20 blur-[100px] rounded-full point-events-none" />
+      <div className="absolute right-0 bottom-0 translate-x-1/2 translate-y-1/2 w-96 h-96 bg-navy-200/20 blur-[100px] rounded-full point-events-none" />
+
+      <div className="relative z-10 mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5 [&>*:last-child]:col-span-2 [&>*:last-child]:sm:col-span-1">
           {stats.map((stat, i) => (
             <div

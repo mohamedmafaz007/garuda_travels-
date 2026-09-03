@@ -44,13 +44,24 @@ export default function CabBooking() {
 
   return (
     <section id="cab-booking" ref={ref} className="relative overflow-hidden bg-navy-900 py-20 lg:py-28">
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute -top-20 -right-20 h-96 w-96 rounded-full bg-gold-500 blur-3xl" />
-        <div className="absolute -bottom-20 -left-20 h-96 w-96 rounded-full bg-navy-500 blur-3xl" />
+      {/* Decorative Background pattern */}
+      <div className="absolute inset-0 opacity-10 pointer-events-none">
+        <div className="absolute -top-20 -right-20 h-[600px] w-[600px] rounded-full bg-gold-400 blur-[150px]" />
+        <div className="absolute -bottom-20 -left-20 h-[600px] w-[600px] rounded-full bg-blue-500 blur-[150px]" />
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      {/* Side vectors */}
+      <svg className="absolute -left-40 top-1/2 -translate-y-1/2 w-96 h-96 opacity-10 pointer-events-none text-white" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="0.5">
+        <circle cx="50" cy="50" r="40" />
+        <circle cx="50" cy="50" r="30" strokeDasharray="4 2" />
+        <path d="M 0 50 L 100 50 M 50 0 L 50 100" />
+      </svg>
+      <svg className="absolute -right-40 top-20 w-96 h-96 opacity-10 pointer-events-none text-gold-500" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="0.5">
+        <rect x="20" y="20" width="60" height="60" transform="rotate(45 50 50)" />
+        <rect x="30" y="30" width="40" height="40" transform="rotate(22.5 50 50)" strokeDasharray="2 2" />
+      </svg>
+
+      <div className="relative mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-8 z-10">
         <div className={`reveal ${revealed ? 'revealed' : ''} mx-auto max-w-2xl text-center`}>
           <span className="text-sm font-bold tracking-[0.2em] text-gold-400 uppercase">Cab Booking</span>
           <h2 className="mt-3 font-display text-3xl font-bold text-white sm:text-4xl lg:text-5xl text-balance">
@@ -118,7 +129,7 @@ export default function CabBooking() {
                 onChange={(e) => setForm({ ...form, passengers: e.target.value })}
                 className="rounded-xl border border-navy-200 bg-navy-50/50 px-4 py-3 text-sm font-medium text-navy-800 outline-none transition-all focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20"
               >
-                {[1,2,3,4,5,6,7,8,9].map((n) => (
+                {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((n) => (
                   <option key={n} value={n}>{n} {n === 1 ? 'Person' : 'People'}</option>
                 ))}
                 <option value="10+">10+ People</option>

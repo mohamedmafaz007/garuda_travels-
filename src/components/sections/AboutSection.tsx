@@ -14,8 +14,18 @@ export default function AboutSection() {
   const { ref, revealed } = useScrollReveal();
 
   return (
-    <section ref={ref} className="bg-ivory py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section ref={ref} className="relative bg-ivory py-20 lg:py-28 overflow-hidden">
+      {/* Decorative Gradients & Grid */}
+      <div className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 rounded-[100%] bg-gold-300/30 blur-[130px] w-[500px] h-[500px] pointer-events-none" />
+      <div className="absolute top-0 right-0 translate-x-1/3 -translate-y-1/4 rounded-[100%] bg-navy-200/40 blur-[150px] w-[600px] h-[600px] pointer-events-none" />
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#d2d7e0 2px, transparent 2px)', backgroundSize: '48px 48px' }} />
+
+      {/* Wave vector on the right */}
+      <svg className="absolute -right-40 top-1/2 -translate-y-1/2 w-[30rem] h-[30rem] opacity-5 pointer-events-none text-navy-900" viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="0.5">
+        <path d="M 0 100 Q 50 20 100 100 T 200 100 M 0 120 Q 50 40 100 120 T 200 120 M 0 140 Q 50 60 100 140 T 200 140 M 0 160 Q 50 80 100 160 T 200 160" />
+      </svg>
+
+      <div className="relative z-10 mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Left: Image collage */}
           <div className={`reveal ${revealed ? 'revealed' : ''} relative`}>

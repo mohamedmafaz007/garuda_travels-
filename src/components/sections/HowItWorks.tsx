@@ -11,8 +11,13 @@ export default function HowItWorks() {
   const { ref, revealed } = useScrollReveal();
 
   return (
-    <section ref={ref} className="bg-white py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section ref={ref} className="relative bg-white py-20 lg:py-28 overflow-hidden">
+      {/* Decorative vectors */}
+      <svg className="absolute -left-20 top-20 w-80 h-80 opacity-[0.03] pointer-events-none text-navy-900" viewBox="0 0 100 100" fill="currentColor">
+        <polygon points="50,0 100,25 100,75 50,100 0,75 0,25" />
+      </svg>
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/3 w-[600px] h-[600px] bg-gold-100/40 rounded-full blur-[100px] pointer-events-none" />
+      <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-8">
         <div className={`reveal ${revealed ? 'revealed' : ''} mx-auto max-w-2xl text-center`}>
           <span className="text-sm font-bold tracking-[0.2em] text-gold-600 uppercase">How It Works</span>
           <h2 className="mt-3 font-display text-3xl font-bold text-navy-800 sm:text-4xl lg:text-5xl text-balance">

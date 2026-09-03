@@ -17,7 +17,7 @@ export default function PackagesPage() {
     <div className="pt-16">
       <div className="relative h-[40vh] min-h-[300px] overflow-hidden bg-navy-900">
         <img
-          src="https://images.pexels.com/photos/13244568/pexels-photo-13244568.jpeg?auto=compress&cs=tinysrgb&w=1920&h=600&fit=crop"
+          src="https://images.pexels.com/photos/13244568/pexels-photo-13244568.jpeg?auto=compress&cs=tinysrgb&w=1920&q=90"
           alt="Historic Indian temple by the river"
           className="h-full w-full object-cover opacity-60"
         />

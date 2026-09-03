@@ -15,7 +15,7 @@ export default function WhyChooseUs() {
 
   return (
     <section ref={ref} className="relative overflow-hidden bg-navy-950 py-20 lg:py-28">
-      {/* Animated route background */}
+      {/* Animated route background and edge glow */}
       <div className="absolute inset-0 opacity-5">
         <svg className="h-full w-full" viewBox="0 0 1200 400" preserveAspectRatio="none">
           <path
@@ -36,8 +36,10 @@ export default function WhyChooseUs() {
           />
         </svg>
       </div>
+      <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-gold-500/20 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-[500px] h-[500px] bg-sky-500/10 rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="relative mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-8">
         <div className={`reveal ${revealed ? 'revealed' : ''} mx-auto max-w-2xl text-center`}>
           <span className="text-sm font-bold tracking-[0.2em] text-gold-400 uppercase">Why Choose Us</span>
           <h2 className="mt-3 font-display text-3xl font-bold text-white sm:text-4xl lg:text-5xl text-balance">

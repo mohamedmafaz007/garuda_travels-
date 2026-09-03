@@ -13,7 +13,7 @@ export default function DestinationsPage() {
     <div className="pt-16">
       <div className="relative h-[40vh] min-h-[300px] overflow-hidden bg-navy-900">
         <img
-          src="https://images.pexels.com/photos/16443099/pexels-photo-16443099.jpeg?auto=compress&cs=tinysrgb&w=1920&h=600&fit=crop"
+          src="https://images.pexels.com/photos/16443099/pexels-photo-16443099.jpeg?auto=compress&cs=tinysrgb&w=1920&q=90"
           alt="Winding road through South Indian tea plantations"
           className="h-full w-full object-cover opacity-60"
         />

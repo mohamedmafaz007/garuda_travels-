@@ -16,8 +16,18 @@ export default function Testimonials() {
   }, [next]);
 
   return (
-    <section ref={ref} className="bg-white py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section ref={ref} className="relative overflow-hidden bg-white py-20 lg:py-28">
+      {/* Decorative Orbs */}
+      <div className="absolute top-0 right-0 translate-x-1/3 -translate-y-1/3 w-[600px] h-[600px] bg-gold-100/50 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 -translate-x-1/3 translate-y-1/3 w-[600px] h-[600px] bg-sky-50/50 rounded-full blur-[120px] pointer-events-none" />
+      {/* Side vectors */}
+      <svg className="absolute -left-20 top-1/2 -translate-y-1/2 w-72 h-72 opacity-[0.03] pointer-events-none text-navy-900" viewBox="0 0 100 100" fill="currentColor">
+        <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="5 5" />
+      </svg>
+      <svg className="absolute -right-20 top-1/2 -translate-y-1/2 w-72 h-72 opacity-[0.03] pointer-events-none text-navy-900" viewBox="0 0 100 100" fill="currentColor">
+        <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="5 5" />
+      </svg>
+      <div className="relative z-10 mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-8">
         <div className={`reveal ${revealed ? 'revealed' : ''} mx-auto max-w-2xl text-center`}>
           <span className="text-sm font-bold tracking-[0.2em] text-gold-600 uppercase">Testimonials</span>
           <h2 className="mt-3 font-display text-3xl font-bold text-navy-800 sm:text-4xl lg:text-5xl text-balance">
@@ -69,9 +79,8 @@ export default function Testimonials() {
                   <button
                     key={i}
                     onClick={() => setCurrent(i)}
-                    className={`h-2.5 rounded-full transition-all ${
-                      i === current ? 'w-8 bg-gold-500' : 'w-2.5 bg-navy-200'
-                    }`}
+                    className={`h-2.5 rounded-full transition-all ${i === current ? 'w-8 bg-gold-500' : 'w-2.5 bg-navy-200'
+                      }`}
                     aria-label={`Go to testimonial ${i + 1}`}
                   />
                 ))}
@@ -90,3 +99,4 @@ export default function Testimonials() {
     </section>
   );
 }
+

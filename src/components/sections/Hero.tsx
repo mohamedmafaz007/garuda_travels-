@@ -47,7 +47,7 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-7xl flex-col justify-center px-4 pt-28 pb-20 sm:px-6 lg:px-8 lg:pt-0 lg:pb-0">
+      <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-[90rem] flex-col justify-center px-4 pt-28 pb-20 sm:px-6 lg:px-8 lg:pt-0 lg:pb-0">
         <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-12 md:gap-6 lg:gap-8">
           
           {/* Left Text */}

@@ -1,5 +1,6 @@
-import { Phone, MessageCircle, Calendar } from 'lucide-react';
+import { Phone, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { WhatsAppIcon } from './WhatsAppIcon';
 
 export default function FloatingActions() {
   return (
@@ -14,7 +15,7 @@ export default function FloatingActions() {
           className="group relative flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white shadow-xl shadow-green-500/30 transition-all hover:scale-110"
         >
           <span className="absolute inset-0 rounded-full bg-green-500 animate-[pulse-ring_2s_ease-out_infinite]" />
-          <MessageCircle className="relative h-6 w-6" />
+          <WhatsAppIcon className="relative h-7 w-7" />
           <span className="absolute right-16 whitespace-nowrap rounded-lg bg-navy-900 px-3 py-1.5 text-sm font-medium text-white opacity-0 transition-opacity group-hover:opacity-100">
             Chat on WhatsApp
           </span>
@@ -46,7 +47,7 @@ export default function FloatingActions() {
           rel="noopener noreferrer"
           className="flex flex-col items-center gap-1 border-x border-navy-100 py-3 text-green-600 transition-colors hover:bg-green-50"
         >
-          <MessageCircle className="h-5 w-5" />
+          <WhatsAppIcon className="h-5 w-5" />
           <span className="text-xs font-semibold">WHATSAPP</span>
         </a>
         <Link

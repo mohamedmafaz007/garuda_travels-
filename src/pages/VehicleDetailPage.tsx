@@ -135,7 +135,7 @@ export default function VehicleDetailPage() {
     <div className="pt-16 bg-slate-50/50 min-h-screen">
       {/* Top Breadcrumb Header */}
       <div className="bg-navy-900 text-white py-8 lg:py-12 border-b border-navy-800">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-center gap-2 text-xs font-medium text-navy-300">
             <Link to="/" className="hover:text-gold-400 transition-colors">Home</Link>
             <ChevronRight className="h-3 w-3" />
@@ -181,7 +181,7 @@ export default function VehicleDetailPage() {
       </div>
 
       {/* Main Content Area */}
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
+      <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Left Column: Vehicle Visuals, Tariffs, Specs & Calculator */}
           <div className="lg:col-span-7 space-y-8">

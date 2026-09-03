@@ -20,7 +20,7 @@ export default function QuoteCTA() {
         <div className="absolute inset-0 bg-gradient-to-r from-navy-950/90 via-navy-950/70 to-navy-950/50" />
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="relative mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-8">
         <div className={`reveal ${revealed ? 'revealed' : ''} max-w-2xl`}>
           <h2 className="font-display text-3xl font-bold text-white sm:text-4xl lg:text-5xl text-balance">
             Have a Different Trip in Mind?
@@ -52,3 +52,4 @@ export default function QuoteCTA() {
     </section>
   );
 }
+

@@ -14,9 +14,9 @@ export default function ContactPage() {
     <div className="pt-16">
       <div className="relative h-[40vh] min-h-[300px] overflow-hidden bg-navy-900">
         <img
-          src="https://images.pexels.com/photos/38115532/pexels-photo-38115532.jpeg?auto=compress&cs=tinysrgb&w=1920&h=600&fit=crop"
+          src="https://images.pexels.com/photos/38115532/pexels-photo-38115532.jpeg?auto=compress&cs=tinysrgb&w=1920&q=90"
           alt="Mountain road in South India"
-          className="h-full w-full object-cover opacity-60"
+          className="h-full w-full object-cover object-[center_65%] opacity-60"
         />
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center">
