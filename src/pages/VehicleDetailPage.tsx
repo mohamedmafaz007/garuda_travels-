@@ -34,7 +34,7 @@ export default function VehicleDetailPage() {
   const vehicle = vehicles.find((v) => v.id === id);
 
   // Estimator state
-  const [estimatedKm, setEstimatedKm] = useState<number>(300);
+  const [estimatedKm, setEstimatedKm] = useState<number>(0);
   const [days, setDays] = useState<number>(1);
   const [preferredPlan, setPreferredPlan] = useState<'DAY_RENT' | 'PER_KM'>('DAY_RENT');
 
@@ -238,11 +238,10 @@ export default function VehicleDetailPage() {
                 {/* Plan 1: Day Rent Plan */}
                 <div
                   onClick={() => selectPlanAndRedirect('DAY_RENT')}
-                  className={`rounded-2xl p-5 border-2 transition-all cursor-pointer hover:shadow-md ${
-                    preferredPlan === 'DAY_RENT'
-                      ? 'border-gold-400 bg-gold-50/20 shadow-sm'
-                      : 'border-slate-200 bg-slate-50/40 hover:border-slate-300'
-                  }`}
+                  className={`rounded-2xl p-5 border-2 transition-all cursor-pointer hover:shadow-md ${preferredPlan === 'DAY_RENT'
+                    ? 'border-gold-400 bg-gold-50/20 shadow-sm'
+                    : 'border-slate-200 bg-slate-50/40 hover:border-slate-300'
+                    }`}
                 >
                   <div className="flex items-center justify-between">
                     <span className="rounded-md bg-gold-500 px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wide text-navy-950">
@@ -299,11 +298,10 @@ export default function VehicleDetailPage() {
                 {/* Plan 2: Per KM Outstation Plan */}
                 <div
                   onClick={() => selectPlanAndRedirect('PER_KM')}
-                  className={`rounded-2xl p-5 border-2 transition-all cursor-pointer hover:shadow-md ${
-                    preferredPlan === 'PER_KM'
-                      ? 'border-navy-800 bg-navy-50/30 shadow-sm'
-                      : 'border-slate-200 bg-slate-50/40 hover:border-slate-300'
-                  }`}
+                  className={`rounded-2xl p-5 border-2 transition-all cursor-pointer hover:shadow-md ${preferredPlan === 'PER_KM'
+                    ? 'border-navy-800 bg-navy-50/30 shadow-sm'
+                    : 'border-slate-200 bg-slate-50/40 hover:border-slate-300'
+                    }`}
                 >
                   <div className="flex items-center justify-between">
                     <span className="rounded-md bg-navy-800 px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wide text-white">
@@ -387,18 +385,14 @@ export default function VehicleDetailPage() {
                   </div>
                   <input
                     type="range"
-                    min={100}
+                    min={0}
                     max={1200}
                     step={25}
                     value={estimatedKm}
                     onChange={(e) => setEstimatedKm(Number(e.target.value))}
                     className="w-full accent-gold-400 cursor-pointer h-2 bg-navy-800 rounded-lg"
                   />
-                  <div className="flex justify-between text-[10px] text-navy-400 mt-1">
-                    <span>100 km (City)</span>
-                    <span>300 km (Rameshwaram)</span>
-                    <span>1200 km (Kerala Circuit)</span>
-                  </div>
+
                 </div>
 
                 <div>
@@ -412,11 +406,10 @@ export default function VehicleDetailPage() {
                         key={d}
                         type="button"
                         onClick={() => setDays(d)}
-                        className={`rounded-xl py-2 text-xs font-bold transition-all ${
-                          days === d
-                            ? 'bg-gold-400 text-navy-950 shadow-md font-sans'
-                            : 'bg-navy-800 text-navy-300 hover:text-white hover:bg-navy-750 font-sans'
-                        }`}
+                        className={`rounded-xl py-2 text-xs font-bold transition-all ${days === d
+                          ? 'bg-gold-400 text-navy-950 shadow-md font-sans'
+                          : 'bg-navy-800 text-navy-300 hover:text-white hover:bg-navy-750 font-sans'
+                          }`}
                       >
                         {d}d
                       </button>
@@ -427,11 +420,10 @@ export default function VehicleDetailPage() {
 
               {/* Comparison Output */}
               <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 border-t border-navy-800 pt-5">
-                <div className={`rounded-2xl p-4 border transition-all ${
-                  preferredPlan === 'DAY_RENT'
-                    ? 'bg-navy-800 border-gold-400/80 shadow-md'
-                    : 'bg-navy-850/60 border-navy-750'
-                }`}>
+                <div className={`rounded-2xl p-4 border transition-all ${preferredPlan === 'DAY_RENT'
+                  ? 'bg-navy-800 border-gold-400/80 shadow-md'
+                  : 'bg-navy-850/60 border-navy-750'
+                  }`}>
                   <div className="flex items-center justify-between text-xs text-navy-300 font-semibold">
                     <span>Day Rent Plan Estimate</span>
                     {dayRentCost <= perKmCost && (
@@ -448,24 +440,25 @@ export default function VehicleDetailPage() {
                   </p>
                 </div>
 
-                <div className={`rounded-2xl p-4 border transition-all ${
-                  preferredPlan === 'PER_KM'
-                    ? 'bg-navy-800 border-gold-400/80 shadow-md'
-                    : 'bg-navy-850/60 border-navy-750'
-                }`}>
-                  <div className="flex items-center justify-between text-xs text-navy-300 font-semibold">
-                    <span>Per KM Plan Estimate</span>
+                <div className={`rounded-2xl p-4 border transition-all ${preferredPlan === 'PER_KM'
+                  ? 'bg-navy-800 border-gold-400/80 shadow-md'
+                  : 'bg-navy-850/60 border-navy-750'
+                  }`}>
+                  <div className="flex items-center justify-between font-semibold mb-4">
+                    <span className="inline-flex rounded-lg bg-[#1a1d24] px-3 py-1.5 text-xs font-bold tracking-widest text-white border border-gray-800">
+                      PER KM PLAN
+                    </span>
                     {perKmCost < dayRentCost && (
                       <span className="rounded bg-gold-400/20 px-2 py-0.5 text-[10px] font-bold text-gold-300">
                         Cheaper for this trip
                       </span>
                     )}
                   </div>
-                  <div className="mt-1 font-sans text-2xl font-extrabold text-white tracking-tight">
-                    ₹{perKmCost.toLocaleString('en-IN')}
+                  <div className="mt-1 font-sans text-4xl font-extrabold text-white tracking-tight flex items-baseline">
+                    ₹{vehicle.tariff.perKmRate}<span className="text-xl font-medium text-navy-400 ml-1">/km</span>
                   </div>
-                  <p className="mt-1 text-[11px] text-navy-400">
-                    Km Charge ({billedKm}km @ ₹{vehicle.tariff.perKmRate}) + Beta (₹{vehicle.tariff.driverBeta * days})
+                  <p className="mt-2 text-sm text-white">
+                    + ₹{vehicle.tariff.driverBeta} Driver beta
                   </p>
                 </div>
               </div>

@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import Hero from '@/components/sections/Hero';
-import TrustStats from '@/components/sections/TrustStats';
 import AboutSection from '@/components/sections/AboutSection';
 import Services from '@/components/sections/Services';
 import DestinationExplorer from '@/components/sections/DestinationExplorer';
@@ -26,7 +25,6 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <TrustStats />
       <AboutSection />
       <DestinationExplorer limit={6} />
       <Packages onViewDetails={setSelectedPackage} limit={3} />

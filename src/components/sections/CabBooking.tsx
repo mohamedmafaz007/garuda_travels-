@@ -3,6 +3,7 @@ import { Car, Clock, Check } from 'lucide-react';
 import { useToast } from '@/context/ToastContext';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { vehicles } from '@/data/mockData';
+import TripCostEstimator from './TripCostEstimator';
 
 const tripTypes = ['One Way', 'Round Trip', 'Local', 'Airport Transfer', 'Outstation'];
 
@@ -178,6 +179,11 @@ export default function CabBooking() {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Cost Estimator */}
+        <div className={`reveal ${revealed ? 'revealed' : ''} mt-12`} style={{ transitionDelay: '0.2s' }}>
+          <TripCostEstimator />
         </div>
       </div>
     </section>
