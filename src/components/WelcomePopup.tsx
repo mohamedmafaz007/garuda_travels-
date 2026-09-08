@@ -26,9 +26,12 @@ export default function WelcomePopup() {
                 <div className="relative overflow-hidden bg-gradient-to-br from-gold-500 via-gold-400 to-yellow-500 px-6 pt-8 pb-10 text-center">
                     <button
                         onClick={() => setIsOpen(false)}
-                        className="absolute right-4 top-4 rounded-full p-2 text-navy-900/70 transition-colors hover:bg-navy-900/10 hover:text-navy-900"
+                        className="group absolute right-1 top-1 z-50 p-3"
+                        aria-label="Close"
                     >
-                        <X className="h-5 w-5" />
+                        <div className="flex h-8 w-8 items-center justify-center rounded-full text-navy-900/70 transition-colors group-hover:bg-navy-900/10 group-hover:text-navy-900">
+                            <X className="h-5 w-5" />
+                        </div>
                     </button>
 
                     <h2 className="relative z-10 text-[20px] font-black uppercase tracking-widest text-navy-900 leading-tight">
@@ -61,15 +64,15 @@ export default function WelcomePopup() {
 
                     <div className="mt-8 space-y-3">
                         <a
-                            href="tel:+918122552280"
+                            href="tel:+919626138168"
                             className="group flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-gold-400 to-gold-500 px-6 py-4 text-sm font-bold text-navy-900 transition-all hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(250,212,109,0.3)] active:scale-95"
                         >
                             <Phone className="h-5 w-5 transition-transform group-hover:rotate-12" />
-                            Call Now: +91 81225 52280
+                            Call Now: +91 96261 38168
                         </a>
 
                         <a
-                            href="https://wa.me/918122552280"
+                            href="https://wa.me/916382863873"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="group flex w-full items-center justify-center gap-2 rounded-2xl border-2 border-green-500/20 bg-green-500/10 px-6 py-4 text-sm font-bold text-green-400 transition-all hover:border-green-500/40 hover:bg-green-500/20 hover:scale-[1.02] active:scale-95"
