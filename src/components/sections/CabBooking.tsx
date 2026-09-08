@@ -38,9 +38,9 @@ export default function CabBooking() {
       `🚗 Vehicle Preference: ${form.vehicle || 'Any Vehicle'}`,
     ];
 
-    const waUrl = `https://wa.me/918122552280?text=${encodeURIComponent(lines.join('\n'))}`;
+    const waUrl = `https://wa.me/916382863873?text=${encodeURIComponent(lines.join('\n'))}`;
     window.open(waUrl, '_blank');
-    showToast(`Cab booking details sent to WhatsApp (+91 81225 52280)!`);
+    showToast(`Cab booking details sent to WhatsApp (+91 63828 63873)!`);
   };
 
   return (

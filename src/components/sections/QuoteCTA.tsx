@@ -38,7 +38,7 @@ export default function QuoteCTA() {
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
             <a
-              href="https://wa.me/918122552280?text=Hi%20BEST%20TRAVELS,%20I'm%20interested%20in%20your%20services"
+              href="https://wa.me/916382863873?text=Hi%20BEST%20TRAVELS,%20I'm%20interested%20in%20your%20services"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 rounded-full glass px-7 py-3.5 text-sm font-bold text-white transition-all hover:bg-white/20"

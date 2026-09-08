@@ -154,10 +154,10 @@ export default function PackageDetailPage() {
             Starting from <span className="font-sans font-bold text-gold-300">₹{pkg.price.toLocaleString('en-IN')}</span> — {pkg.duration}
           </p>
           <a
-            href={`https://wa.me/918122552280?text=${encodeURIComponent(`Hi GARUDA TRAVELS, I want to book the "${pkg.title}" tour package!\n\nDuration: ${pkg.duration}\nStarting Price: ₹${pkg.price.toLocaleString('en-IN')}\nHighlights: ${pkg.highlights.join(', ')}\n\nPlease share available dates and pricing details.`)}`}
+            href={`https://wa.me/916382863873?text=${encodeURIComponent(`Hi GARUDA TRAVELS, I want to book the "${pkg.title}" tour package!\n\nDuration: ${pkg.duration}\nStarting Price: ₹${pkg.price.toLocaleString('en-IN')}\nHighlights: ${pkg.highlights.join(', ')}\n\nPlease share available dates and pricing details.`)}`}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => showToast(`Opening WhatsApp to book ${pkg.title} (+91 81225 52280)...`)}
+            onClick={() => showToast(`Opening WhatsApp to book  (+91 63828 63873)...`)}
             className="mt-5 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-gold-400 to-gold-500 px-8 py-4 text-sm font-bold text-navy-900 transition-all hover:-translate-y-0.5 shadow-lg"
           >
             <IndianRupee className="h-5 w-5" />

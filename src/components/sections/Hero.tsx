@@ -29,8 +29,8 @@ export default function Hero() {
       `🚗 Trip Type: ${booking.tripType}`
     );
 
-    window.open(`https://wa.me/918122552280?text=${whatsappText}`, '_blank');
-    showToast(`Opening WhatsApp with your trip details to +91 81225 52280!`);
+    window.open(`https://wa.me/916382863873?text=${whatsappText}`, '_blank');
+    showToast(`Opening WhatsApp with your trip details to +91 63828 63873!`);
   };
 
   return (

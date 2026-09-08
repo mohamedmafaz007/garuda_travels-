@@ -127,7 +127,7 @@ export default function Navbar() {
 
           <div className="hidden items-center gap-3 lg:flex">
             <a
-              href="tel:+918122552280"
+              href="tel:+919626138168"
               className="flex whitespace-nowrap items-center gap-2 rounded-full bg-gold-500 px-5 py-2.5 text-sm font-bold text-navy-900 shadow-md transition-all hover:bg-gold-600 hover:shadow-lg"
             >
               <Phone className="h-4 w-4" />
@@ -211,7 +211,7 @@ export default function Navbar() {
             ))}
             <div className="mt-4 flex flex-col gap-3">
               <a
-                href="tel:+918122552280"
+                href="tel:+919626138168"
                 className="flex items-center justify-center gap-2 rounded-xl bg-navy-50 px-4 py-3 text-sm font-bold text-navy-700"
               >
                 <Phone className="h-4 w-4" />

@@ -39,11 +39,11 @@ export default function ContactForm() {
       form.message ? `💬 Message: ${form.message}` : '',
     ].filter(Boolean);
 
-    const whatsappUrl = `https://wa.me/918122552280?text=${encodeURIComponent(lines.join('\n'))}`;
+    const whatsappUrl = `https://wa.me/916382863873?text=${encodeURIComponent(lines.join('\n'))}`;
     setLastWhatsAppUrl(whatsappUrl);
     window.open(whatsappUrl, '_blank');
     setSubmitted(true);
-    showToast('Enquiry details forwarded to WhatsApp (+91 81225 52280)!');
+    showToast('Enquiry details forwarded to WhatsApp (+91 63828 63873)!');
   };
 
   const resetForm = () => {
@@ -80,8 +80,8 @@ export default function ContactForm() {
 
             <div className="mt-8 space-y-4">
               {[
-                { icon: Phone, label: 'Phone', value: '+91 81225 52280', href: 'tel:+918122552280' },
-                { icon: MessageCircle, label: 'WhatsApp', value: '+91 81225 52280', href: 'https://wa.me/918122552280?text=Hi%20GARUDA%20TRAVELS,%20I%20have%20an%20enquiry' },
+                { icon: Phone, label: 'Phone', value: '+91 96261 38168', href: 'tel:+919626138168' },
+                { icon: MessageCircle, label: 'WhatsApp', value: '+91 63828 63873', href: 'https://wa.me/916382863873?text=Hi%20GARUDA%20TRAVELS,%20I%20have%20an%20enquiry' },
                 { icon: Mail, label: 'Email', value: 'garudatravels@gmail.com', href: 'mailto:garudatravels@gmail.com' },
                 {
                   icon: MapPin,

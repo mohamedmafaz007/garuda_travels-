@@ -158,9 +158,9 @@ export default function PackageModal({ pkg, onClose }: { pkg: Package; onClose: 
                   `✨ Highlights: ${pkg.highlights.join(', ')}\n\n` +
                   `Please confirm available departure dates and vehicle options.`
                 );
-                window.open(`https://wa.me/918122552280?text=${msg}`, '_blank');
+                window.open(`https://wa.me/916382863873?text=${msg}`, '_blank');
                 onClose();
-                showToast(`Booking details for ${pkg.title} sent to WhatsApp (+91 81225 52280)!`);
+                showToast(`Booking details for ${pkg.title} sent to WhatsApp (+91 63828 63873)!`);
               }}
               className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-gold-400 to-gold-500 px-6 py-4 text-sm font-bold text-navy-900 shadow-lg transition-all hover:-translate-y-0.5 hover:shadow-xl"
             >

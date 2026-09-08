@@ -141,7 +141,7 @@ export default function ReviewsListAndForm() {
                     id="phone"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    placeholder="+91 8122552280"
+                    placeholder="+91 9626138168"
                     className="w-full rounded-xl border border-navy-200 bg-white px-4 py-3 text-sm text-navy-900 outline-none transition-all placeholder:text-navy-400 focus:border-gold-500 focus:ring-2 focus:ring-gold-500/20"
                   />
                 </div>

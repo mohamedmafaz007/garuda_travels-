@@ -20,7 +20,7 @@ export default function Footer() {
                 { icon: Instagram, href: 'https://instagram.com', label: 'Instagram' },
                 { icon: Facebook, href: 'https://facebook.com', label: 'Facebook' },
                 { icon: Youtube, href: 'https://youtube.com', label: 'YouTube' },
-                { icon: MessageCircle, href: 'https://wa.me/918122552280?text=Hi%20GARUDA%20TRAVELS,%20I%20have%20an%20enquiry', label: 'WhatsApp' },
+                { icon: MessageCircle, href: 'https://wa.me/916382863873?text=Hi%20GARUDA%20TRAVELS,%20I%20have%20an%20enquiry', label: 'WhatsApp' },
               ].map(({ icon: Icon, href, label }) => (
                 <a
                   key={label}
@@ -95,9 +95,9 @@ export default function Footer() {
               ))}
             </ul>
             <div className="mt-5 space-y-3">
-              <a href="tel:+918122552280" className="flex items-start gap-3 text-sm text-navy-300 hover:text-gold-400 transition-colors">
+              <a href="tel:+919626138168" className="flex items-start gap-3 text-sm text-navy-300 hover:text-gold-400 transition-colors">
                 <Phone className="h-4 w-4 shrink-0 mt-0.5" />
-                <span>+91 81225 52280</span>
+                <span>+91 96261 38168</span>
               </a>
               <a href="mailto:garudatravels@gmail.com" className="flex items-start gap-3 text-sm text-navy-300 hover:text-gold-400 transition-colors">
                 <Mail className="h-4 w-4 shrink-0 mt-0.5" />

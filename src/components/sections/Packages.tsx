@@ -58,7 +58,7 @@ export function PackageCard({ pkg, onViewDetails }: { pkg: Package; onViewDetail
             View Details
           </Link>
           <a
-            href={`https://wa.me/918122552280?text=${encodeURIComponent(`Hi GARUDA TRAVELS, I want to book the "${pkg.title}" tour package!\n\nDuration: ${pkg.duration}\nStarting Price: ₹${pkg.price.toLocaleString('en-IN')}\nHighlights: ${pkg.highlights.join(', ')}\n\nPlease share availability and confirm timings.`)}`}
+            href={`https://wa.me/916382863873?text=${encodeURIComponent(`Hi GARUDA TRAVELS, I want to book the "${pkg.title}" tour package!\n\nDuration: ${pkg.duration}\nStarting Price: ₹${pkg.price.toLocaleString('en-IN')}\nHighlights: ${pkg.highlights.join(', ')}\n\nPlease share availability and confirm timings.`)}`}
             target="_blank"
             rel="noopener noreferrer"
             className="flex-1 flex items-center justify-center rounded-xl bg-gradient-to-r from-gold-400 to-gold-500 px-4 py-3 text-sm font-bold text-navy-900 transition-all hover:shadow-lg hover:shadow-gold-500/30 text-center"

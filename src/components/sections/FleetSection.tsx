@@ -103,14 +103,14 @@ export function VehicleCard({ vehicle, onBook }: { vehicle: Vehicle; onBook?: (v
         {/* Action Buttons */}
         <div className="mt-4 grid grid-cols-3 gap-2">
           <a
-            href="tel:+918122552280"
+            href="tel:+919626138168"
             className="flex items-center justify-center rounded-xl bg-navy-50 py-3 text-navy-700 transition-all hover:bg-navy-100"
             aria-label={`Call to book ${vehicle.name}`}
           >
             <Phone className="h-4 w-4" />
           </a>
           <a
-            href={`https://wa.me/918122552280?text=${encodeURIComponent(`Hi GARUDA TRAVELS, I want to enquire about booking ${vehicle.name} (Day rent: ₹${vehicle.tariff.dayRent}/day or ₹${vehicle.tariff.perKmRate}/km).`)}`}
+            href={`https://wa.me/916382863873?text=${encodeURIComponent(`Hi GARUDA TRAVELS, I want to enquire about booking ${vehicle.name} (Day rent: ₹${vehicle.tariff.dayRent}/day or ₹${vehicle.tariff.perKmRate}/km).`)}`}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center rounded-xl bg-green-50 py-3 text-green-600 transition-all hover:bg-green-100"

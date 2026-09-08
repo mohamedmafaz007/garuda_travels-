@@ -14,14 +14,14 @@ export default function FloatingActions() {
       {/* Sticky Action Bar (Floats on Desktop, Bottom sticky on Mobile) */}
       <div className="fixed bottom-0 left-0 right-0 z-40 grid grid-cols-5 border-t border-navy-100 bg-white shadow-[0_-8px_30px_rgba(0,0,0,0.08)] transition-all duration-300">
         <a
-          href="tel:+918122552280"
+          href="tel:+919626138168"
           className="flex flex-col items-center justify-center gap-1 py-4 text-navy-700 transition-colors hover:bg-navy-50 border-r border-navy-100"
         >
           <Phone className="h-5 w-5" />
           <span className="text-[10px] font-semibold">CALL</span>
         </a>
         <a
-          href="https://wa.me/918122552280?text=Hi%20BEST%20TRAVELS,%20I%20have%20an%20enquiry"
+          href="https://wa.me/916382863873?text=Hi%20BEST%20TRAVELS,%20I%20have%20an%20enquiry"
           target="_blank"
           rel="noopener noreferrer"
           className="flex flex-col items-center justify-center gap-1 py-4 text-green-600 transition-colors hover:bg-green-50 border-r border-navy-100"

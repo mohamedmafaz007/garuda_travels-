@@ -115,9 +115,9 @@ export default function VehicleDetailPage() {
       return;
     }
 
-    window.open(`https://wa.me/918122552280?text=${whatsappMessage}`, '_blank');
+    window.open(`https://wa.me/916382863873?text=${whatsappMessage}`, '_blank');
     setIsSubmitted(true);
-    showToast(`Booking details for ${vehicle.name} sent to WhatsApp (+91 81225 52280)!`);
+    showToast(`Booking details for ${vehicle.name} sent to WhatsApp (+91 63828 63873)!`);
   };
 
   const selectedPlanText = bookingForm.planType === 'DAY_RENT'
@@ -515,7 +515,7 @@ export default function VehicleDetailPage() {
                   </p>
 
                   <a
-                    href={`https://wa.me/918122552280?text=${whatsappMessage}`}
+                    href={`https://wa.me/916382863873?text=${whatsappMessage}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-4 inline-flex items-center justify-center gap-2 rounded-2xl bg-green-600 hover:bg-green-700 px-6 py-3.5 text-sm font-bold text-white transition-all w-full shadow-lg"
@@ -553,7 +553,7 @@ export default function VehicleDetailPage() {
                       required
                       value={bookingForm.phone}
                       onChange={(e) => setBookingForm({ ...bookingForm, phone: e.target.value })}
-                      placeholder="e.g. +91 81225 52280"
+                      placeholder="e.g. +91 96261 38168"
                       className="mt-1 w-full rounded-xl border border-slate-200 bg-slate-50/50 px-3.5 py-2.5 text-sm font-medium text-navy-900 outline-none focus:border-gold-500 focus:bg-white focus:ring-2 focus:ring-gold-400/20 transition-all"
                     />
                   </div>
@@ -659,14 +659,14 @@ export default function VehicleDetailPage() {
               {/* Direct Help shortcuts */}
               <div className="mt-6 grid grid-cols-2 gap-3 border-t border-slate-100 pt-5">
                 <a
-                  href="tel:+918122552280"
+                  href="tel:+919626138168"
                   className="flex items-center justify-center gap-2 rounded-xl bg-slate-100 hover:bg-slate-200 py-3 text-xs font-bold text-navy-800 transition-all"
                 >
                   <Phone className="h-4 w-4 text-navy-700" />
                   <span>Call Dispatch</span>
                 </a>
                 <a
-                  href={`https://wa.me/918122552280?text=${whatsappMessage}`}
+                  href={`https://wa.me/916382863873?text=${whatsappMessage}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 rounded-xl bg-green-50 hover:bg-green-100 text-green-700 border border-green-200 py-3 text-xs font-bold transition-all"

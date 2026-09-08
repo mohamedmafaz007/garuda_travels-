@@ -190,14 +190,14 @@ export default function VehicleModal({ vehicle, onClose }: { vehicle: Vehicle; o
             {/* Booking CTA buttons */}
             <div className="grid grid-cols-3 gap-3 pt-2">
               <a
-                href="tel:+918122552280"
+                href="tel:+919626138168"
                 className="flex items-center justify-center gap-2 rounded-xl bg-navy-50 py-3.5 text-sm font-bold text-navy-700 transition-all hover:bg-navy-100"
               >
                 <Phone className="h-4 w-4" />
                 <span>Call</span>
               </a>
               <a
-                href={`https://wa.me/918122552280?text=${encodeURIComponent(`Hi GARUDA TRAVELS, I want to book ${vehicle.name}. Estimated trip: ${estimatedKm} km, ${days} day(s).`)}`}
+                href={`https://wa.me/916382863873?text=${encodeURIComponent(`Hi GARUDA TRAVELS, I want to book ${vehicle.name}. Estimated trip: ${estimatedKm} km, ${days} day(s).`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 rounded-xl bg-green-50 py-3.5 text-sm font-bold text-green-600 transition-all hover:bg-green-100"
