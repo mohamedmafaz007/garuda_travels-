@@ -293,7 +293,7 @@ export const vehicles: Vehicle[] = [
     name: 'Toyota Innova Crysta',
     type: 'PREMIUM',
     categoryTags: ['SUV', 'PREMIUM'],
-    image: '/images/toyota_innova.jpg',
+    image: '/images/toyota_innova.jpg?v=2',
     capacity: 7,
     features: ['Dual AC', 'Captain Seats', 'Superior Comfort', 'Smooth Highway Ride'],
     rating: 4.9,
