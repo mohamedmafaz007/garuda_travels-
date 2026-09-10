@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import Hero from '@/components/sections/Hero';
-import AboutSection from '@/components/sections/AboutSection';
 import Services from '@/components/sections/Services';
 import DestinationExplorer from '@/components/sections/DestinationExplorer';
 import Packages from '@/components/sections/Packages';
@@ -25,14 +24,13 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <AboutSection />
+      <Gallery limit={6} />
       <FleetSection onBook={setSelectedVehicle} limit={4} />
       <DestinationExplorer limit={6} />
       <Packages onViewDetails={setSelectedPackage} limit={3} />
       <CabBooking />
       <WhyChooseUs />
       <HowItWorks />
-      <Gallery limit={6} />
       <Testimonials />
       <FAQ />
       <QuoteCTA />

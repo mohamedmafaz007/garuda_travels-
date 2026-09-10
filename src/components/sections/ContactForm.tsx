@@ -80,7 +80,8 @@ export default function ContactForm() {
 
             <div className="mt-8 space-y-4">
               {[
-                { icon: Phone, label: 'Phone', value: '+91 96261 38168', href: 'tel:+919626138168' },
+                { icon: Phone, label: 'Primary Phone', value: '+91 96261 38168', href: 'tel:+919626138168' },
+                { icon: Phone, label: 'Secondary Phone', value: '+91 93634 56631', href: 'tel:+919363456631' },
                 { icon: MessageCircle, label: 'WhatsApp', value: '+91 63828 63873', href: 'https://wa.me/916382863873?text=Hi%20GARUDA%20TRAVELS,%20I%20have%20an%20enquiry' },
                 { icon: Mail, label: 'Email', value: 'garudatravels@gmail.com', href: 'mailto:garudatravels@gmail.com' },
                 {

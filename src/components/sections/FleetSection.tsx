@@ -12,7 +12,7 @@ export function VehicleCard({ vehicle, onBook }: { vehicle: Vehicle; onBook?: (v
         <img
           src={vehicle.image}
           alt={vehicle.name}
-          className="h-full w-full object-contain object-center p-3 transition-transform duration-700 group-hover:scale-105"
+          className="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
           loading="lazy"
         />
         {vehicle.badge && (

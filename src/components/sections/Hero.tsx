@@ -120,17 +120,19 @@ export default function Hero() {
                     Where do you want to go?
                   </label>
                   <div className="relative">
-                    <select
+                    <input
+                      type="text"
+                      list="destinations-list"
                       value={booking.destination}
                       onChange={(e) => setBooking({ ...booking, destination: e.target.value })}
-                      className="w-full appearance-none rounded-xl border border-navy-200 bg-white px-3.5 py-2.5 sm:py-3 text-sm font-medium text-navy-800 outline-none transition-all focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20"
-                    >
-                      <option value="">Select Destination</option>
+                      placeholder="e.g. Madurai, Ooty..."
+                      className="w-full rounded-xl border border-navy-200 bg-white px-3.5 py-2.5 sm:py-3 text-sm font-medium text-navy-800 outline-none transition-all focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20"
+                    />
+                    <datalist id="destinations-list">
                       {destinations.map((d) => (
-                        <option key={d.id} value={d.name}>{d.name}</option>
+                        <option key={d.id} value={d.name} />
                       ))}
-                    </select>
-                    <ChevronDown className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-navy-400" />
+                    </datalist>
                   </div>
                 </div>
 

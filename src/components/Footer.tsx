@@ -99,6 +99,10 @@ export default function Footer() {
                 <Phone className="h-4 w-4 shrink-0 mt-0.5" />
                 <span>+91 96261 38168</span>
               </a>
+              <a href="tel:+919363456631" className="flex items-start gap-3 text-sm text-navy-300 hover:text-gold-400 transition-colors">
+                <Phone className="h-4 w-4 shrink-0 mt-0.5" />
+                <span>+91 93634 56631</span>
+              </a>
               <a href="mailto:garudatravels@gmail.com" className="flex items-start gap-3 text-sm text-navy-300 hover:text-gold-400 transition-colors">
                 <Mail className="h-4 w-4 shrink-0 mt-0.5" />
                 <span>garudatravels@gmail.com</span>

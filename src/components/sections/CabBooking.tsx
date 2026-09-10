@@ -149,17 +149,16 @@ export default function CabBooking() {
                 ))}
               </select>
             </div>
+            <div className="mt-6 flex justify-center sm:col-span-2 lg:col-span-3">
+              <button
+                type="submit"
+                className="flex items-center gap-2 rounded-full bg-gradient-to-r from-gold-400 to-gold-500 px-10 py-4 text-sm font-bold text-navy-900 shadow-lg shadow-gold-500/30 transition-all hover:-translate-y-0.5 hover:shadow-xl"
+              >
+                <Car className="h-5 w-5" />
+                Get Cab Quote
+              </button>
+            </div>
           </form>
-
-          <div className="mt-6 flex justify-center">
-            <button
-              type="submit"
-              className="flex items-center gap-2 rounded-full bg-gradient-to-r from-gold-400 to-gold-500 px-10 py-4 text-sm font-bold text-navy-900 shadow-lg shadow-gold-500/30 transition-all hover:-translate-y-0.5 hover:shadow-xl"
-            >
-              <Car className="h-5 w-5" />
-              Get Cab Quote
-            </button>
-          </div>
 
           {/* Quick info */}
           <div className="mt-8 grid grid-cols-1 gap-4 border-t border-navy-100 pt-6 sm:grid-cols-3">

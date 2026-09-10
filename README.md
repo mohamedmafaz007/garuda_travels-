@@ -7,7 +7,7 @@ Premium tour packages, cab rentals, luxury vehicle dispatch, and live trip reser
 ## Features
 - **Fleet Tariffs**: Fixed & transparent Day Rent and Per KM pricing for Sedan, Ertiga, Innova Crysta, and Force Urbania.
 - **Tour Packages**: South India, Temple tours, Honeymoon, and Hill station packages.
-- **Direct WhatsApp Integration**: Instant trip booking and enquiries forwarded to `+91 81225 52280`.
+- **Direct WhatsApp Integration**: Instant trip booking and enquiries forwarded to `+91 63828 63873`.
 - **Interactive Location Map**: Office headquarters in Thirunagar, Madurai.
 - **Responsive Luxury Design**: Royal Obsidian and Gold theme, fully responsive across mobile, tablet, and desktop views.
 

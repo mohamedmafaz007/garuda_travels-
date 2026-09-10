@@ -23,11 +23,11 @@ export default function VehicleModal({ vehicle, onClose }: { vehicle: Vehicle; o
       <div className="my-6 w-full max-w-2xl" onClick={(e) => e.stopPropagation()}>
         <div className="animate-scale-in overflow-hidden rounded-3xl bg-white shadow-2xl border border-navy-100">
           {/* Hero image with studio presentation */}
-          <div className="relative h-60 bg-gradient-to-b from-gray-50 via-white to-gray-50 flex items-center justify-center p-4">
+          <div className="relative h-60 bg-gradient-to-b from-gray-50 via-white to-gray-50 flex items-center justify-center overflow-hidden">
             <img
               src={vehicle.image}
               alt={vehicle.name}
-              className="h-full w-full object-contain"
+              className="h-full w-full object-cover"
             />
             <button
               onClick={onClose}

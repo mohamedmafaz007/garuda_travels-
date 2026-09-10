@@ -126,14 +126,24 @@ export default function Navbar() {
           </nav>
 
           <div className="hidden items-center gap-3 lg:flex">
-            <a
-              href="tel:+919626138168"
-              className="flex whitespace-nowrap items-center gap-2 rounded-full bg-gold-500 px-5 py-2.5 text-sm font-bold text-navy-900 shadow-md transition-all hover:bg-gold-600 hover:shadow-lg"
-            >
-              <Phone className="h-4 w-4" />
-              Call Now
-            </a>
-
+            <div className="group relative">
+              <button className="flex whitespace-nowrap items-center gap-2 rounded-full bg-gold-500 px-5 py-2.5 text-sm font-bold text-navy-900 shadow-md transition-all hover:bg-gold-600 hover:shadow-lg">
+                <Phone className="h-4 w-4" />
+                Call Now
+              </button>
+              <div className="absolute right-0 top-full hidden w-48 pt-2 group-hover:block z-50">
+                <div className="flex flex-col gap-1 rounded-xl border border-navy-100 bg-white p-2 shadow-xl">
+                  <a href="tel:+919626138168" className="flex items-center gap-2 rounded-lg px-4 py-3 text-sm font-bold text-navy-700 transition-colors hover:bg-navy-50 hover:text-gold-600">
+                    <Phone className="h-4 w-4" />
+                    +91 96261 38168
+                  </a>
+                  <a href="tel:+919363456631" className="flex items-center gap-2 rounded-lg px-4 py-3 text-sm font-bold text-navy-700 transition-colors hover:bg-navy-50 hover:text-gold-600">
+                    <Phone className="h-4 w-4" />
+                    +91 93634 56631
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
 
           <button
@@ -215,9 +225,15 @@ export default function Navbar() {
                 className="flex items-center justify-center gap-2 rounded-xl bg-navy-50 px-4 py-3 text-sm font-bold text-navy-700"
               >
                 <Phone className="h-4 w-4" />
-                Call Now
+                Call +91 96261 38168
               </a>
-
+              <a
+                href="tel:+919363456631"
+                className="flex items-center justify-center gap-2 rounded-xl bg-navy-50 px-4 py-3 text-sm font-bold text-navy-700"
+              >
+                <Phone className="h-4 w-4" />
+                Call +91 93634 56631
+              </a>
             </div>
           </nav>
         </div>

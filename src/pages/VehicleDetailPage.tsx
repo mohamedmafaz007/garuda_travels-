@@ -194,11 +194,11 @@ export default function VehicleDetailPage() {
           <div className="lg:col-span-7 space-y-8">
             {/* Vehicle Card Hero */}
             <div className="overflow-hidden rounded-3xl bg-white p-6 sm:p-8 shadow-sm border border-slate-200/80">
-              <div className="relative h-64 sm:h-80 w-full flex items-center justify-center bg-gradient-to-b from-slate-50 via-white to-slate-50 rounded-2xl p-4">
+              <div className="relative h-64 sm:h-80 w-full flex items-center justify-center bg-gradient-to-b from-slate-50 via-white to-slate-50 rounded-2xl overflow-hidden">
                 <img
                   src={vehicle.image}
                   alt={vehicle.name}
-                  className="max-h-full max-w-full object-contain drop-shadow-md"
+                  className="h-full w-full object-cover drop-shadow-md"
                 />
               </div>
 
@@ -722,11 +722,11 @@ export default function VehicleDetailPage() {
                 to={`/vehicles/${v.id}`}
                 className="group rounded-3xl bg-white p-5 shadow-sm border border-slate-200/80 hover:shadow-xl hover:border-gold-300 transition-all hover:-translate-y-1"
               >
-                <div className="h-40 w-full flex items-center justify-center bg-slate-50 rounded-2xl p-2">
+                <div className="h-40 w-full flex items-center justify-center bg-slate-50 rounded-2xl overflow-hidden">
                   <img
                     src={v.image}
                     alt={v.name}
-                    className="max-h-full max-w-full object-contain transition-transform group-hover:scale-105"
+                    className="h-full w-full object-cover transition-transform group-hover:scale-105"
                   />
                 </div>
                 <div className="mt-4">
