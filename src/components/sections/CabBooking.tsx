@@ -5,7 +5,7 @@ import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { vehicles } from '@/data/mockData';
 import TripCostEstimator from './TripCostEstimator';
 
-const tripTypes = ['One Way', 'Round Trip', 'Local', 'Airport Transfer', 'Outstation'];
+const tripTypes = ['One Way', 'Round Trip'];
 
 export default function CabBooking() {
   const { showToast } = useToast();
