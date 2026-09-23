@@ -54,17 +54,19 @@ export function VehicleCard({ vehicle, onBook }: { vehicle: Vehicle; onBook?: (v
           ))}
         </div>
 
-        {/* Tariff Breakdown: Clean Stacked Layout with Modern Sans Font */}
-        <div className="mt-4 rounded-2xl bg-slate-50/80 p-3 border border-slate-200/80 space-y-2.5">
+        {/* Tariff Breakdown */}
+        <div className="mt-4 flex flex-col gap-2 rounded-2xl bg-slate-50/80 p-3 border border-slate-200/80">
           {/* Day Rent Plan */}
           <div className="flex items-center justify-between rounded-xl bg-white px-3 py-2.5 border border-slate-200/70 shadow-xs">
             <div className="flex flex-col min-w-0 pr-2">
               <span className="text-[10px] font-bold uppercase tracking-wider text-gold-700 bg-gold-50 px-2 py-0.5 rounded-md border border-gold-200/60 w-fit">
                 Day Rent Plan
               </span>
-              <span className="text-[11px] font-semibold text-slate-600 mt-1 truncate">
-                + ₹{vehicle.tariff.fuelPerKm}/km fuel
-              </span>
+              {vehicle.tariff.fuelPerKm ? (
+                <span className="text-[11px] font-semibold text-slate-600 mt-1 truncate">
+                  + ₹{vehicle.tariff.fuelPerKm}/km fuel
+                </span>
+              ) : null}
             </div>
             <div className="text-right shrink-0">
               <div className="font-sans text-lg font-extrabold text-slate-900 tracking-tight leading-tight">
@@ -78,11 +80,11 @@ export function VehicleCard({ vehicle, onBook }: { vehicle: Vehicle; onBook?: (v
           {/* Per KM Plan */}
           <div className="flex items-center justify-between rounded-xl bg-white px-3 py-2.5 border border-slate-200/70 shadow-xs">
             <div className="flex flex-col min-w-0 pr-2">
-              <div className="flex items-center gap-1.5 flex-wrap">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-navy-800 bg-navy-50 px-2 py-0.5 rounded-md border border-navy-200/60 w-fit">
+              <div className="flex items-center gap-1.5">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-navy-700 bg-navy-50 px-2 py-0.5 rounded-md border border-navy-200/60 w-fit">
                   Per KM Plan
                 </span>
-                <span className="text-[9px] font-semibold text-slate-500 bg-slate-100 px-1.5 py-0.5 rounded">
+                <span className="text-[9px] font-medium text-slate-500 bg-slate-100 px-1.5 py-0.5 rounded">
                   Min {vehicle.tariff.minKm} km
                 </span>
               </div>
@@ -90,41 +92,65 @@ export function VehicleCard({ vehicle, onBook }: { vehicle: Vehicle; onBook?: (v
                 + ₹{vehicle.tariff.driverBeta} Driver beta
               </span>
             </div>
-            <div className="text-right shrink-0">
-              <div className="font-sans text-lg font-extrabold text-slate-900 tracking-tight leading-tight">
-                ₹{vehicle.tariff.perKmRate}
-                <span className="text-[11px] font-normal text-slate-500"> /km</span>
-              </div>
+            <div className="text-right shrink-0 flex flex-col items-end">
+              {vehicle.tariff.perKmRate350below ? (
+                <>
+                  <div className="font-sans text-[11px] font-bold text-slate-900 tracking-tight leading-tight">
+                    ₹{vehicle.tariff.perKmRate350below}
+                    <span className="font-normal text-slate-500 text-[10px]"> /km (&lt;350)</span>
+                  </div>
+                  <div className="font-sans text-[11px] font-bold text-slate-900 tracking-tight leading-tight">
+                    ₹{vehicle.tariff.perKmRate350above}
+                    <span className="font-normal text-slate-500 text-[10px]"> /km (&gt;350)</span>
+                  </div>
+                </>
+              ) : (
+                <div className="font-sans text-lg font-extrabold text-slate-900 tracking-tight leading-tight">
+                  ₹{vehicle.tariff.perKmRate}
+                  <span className="text-[11px] font-normal text-slate-500"> /km</span>
+                </div>
+              )}
               <span className="text-[10px] text-slate-400 font-medium block mt-0.5">Outstation</span>
             </div>
           </div>
         </div>
 
         {/* Action Buttons */}
-        <div className="mt-4 grid grid-cols-3 gap-2">
-          <a
-            href="tel:+919626138168"
-            className="flex items-center justify-center rounded-xl bg-navy-50 py-3 text-navy-700 transition-all hover:bg-navy-100"
-            aria-label={`Call to book ${vehicle.name}`}
-          >
-            <Phone className="h-4 w-4" />
-          </a>
-          <a
-            href={`https://wa.me/916382863873?text=${encodeURIComponent(`Hi GARUDA TRAVELS, I want to enquire about booking ${vehicle.name} (Day rent: ₹${vehicle.tariff.dayRent}/day or ₹${vehicle.tariff.perKmRate}/km).`)}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center rounded-xl bg-green-50 py-3 text-green-600 transition-all hover:bg-green-100"
-            aria-label={`WhatsApp to book ${vehicle.name}`}
-          >
-            <MessageCircle className="h-4 w-4" />
-          </a>
-          <Link
-            to={`/vehicles/${vehicle.id}`}
-            onClick={() => onBook?.(vehicle)}
-            className="flex items-center justify-center rounded-xl bg-gradient-to-r from-gold-400 to-gold-500 py-3 text-xs font-bold text-navy-900 transition-all hover:shadow-lg hover:from-gold-300 hover:to-gold-400 text-center"
-          >
-            Book Vehicle
-          </Link>
+        <div className="mt-4 flex flex-col gap-2">
+          <div className="grid grid-cols-2 gap-2">
+            <a
+              href="tel:+919626138168"
+              className="flex items-center justify-center gap-1.5 rounded-xl bg-navy-50 py-2.5 text-[10px] font-bold text-navy-700 transition-all hover:bg-navy-100"
+            >
+              <Phone className="h-3 w-3 shrink-0 text-gold-600" />
+              +91 96261 38168
+            </a>
+            <a
+              href="tel:+919363456631"
+              className="flex items-center justify-center gap-1.5 rounded-xl bg-navy-50 py-2.5 text-[10px] font-bold text-navy-700 transition-all hover:bg-navy-100"
+            >
+              <Phone className="h-3 w-3 shrink-0 text-gold-600" />
+              +91 93634 56631
+            </a>
+          </div>
+          <div className="grid grid-cols-2 gap-2">
+            <a
+              href={`https://wa.me/916382863873?text=${encodeURIComponent(`Hi GARUDA TRAVELS, I want to enquire about booking ${vehicle.name} (Day rent: ₹${vehicle.tariff.dayRent}/day or ₹${vehicle.tariff.perKmRate}/km).`)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-1.5 rounded-xl bg-green-50 py-2.5 text-[10px] font-bold text-green-700 transition-all hover:bg-green-100"
+            >
+              <MessageCircle className="h-3 w-3 shrink-0" />
+              WhatsApp
+            </a>
+            <Link
+              to={`/vehicles/${vehicle.id}`}
+              onClick={() => onBook?.(vehicle)}
+              className="flex items-center justify-center rounded-xl bg-gradient-to-r from-gold-400 to-gold-500 py-2.5 text-[11px] font-bold text-navy-900 transition-all hover:shadow-lg hover:from-gold-300 hover:to-gold-400"
+            >
+              Book Vehicle
+            </Link>
+          </div>
         </div>
       </div>
     </div>

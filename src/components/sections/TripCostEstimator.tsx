@@ -98,38 +98,15 @@ export default function TripCostEstimator({ onClose }: Props = {}) {
                 </div>
             </div>
 
-            <div className="mt-8 grid gap-6 sm:grid-cols-2">
-                {/* Day Rent Plan Card */}
-                <div className={`relative flex flex-col justify-center rounded-xl border p-6 transition-colors ${isDayRentCheaper ? 'border-gold-500 bg-gold-500/5' : 'border-gray-700 bg-gray-800/30'}`}>
-                    {isDayRentCheaper && (
-                        <span className="absolute right-4 top-4 rounded bg-[#332A15] px-2.5 py-1 text-xs font-semibold text-gold-400">
-                            Cheaper for this trip
-                        </span>
-                    )}
+            <div className="mt-8">
+                {/* Day Rent Plan Card - Only */}
+                <div className={`relative flex flex-col justify-center rounded-xl border p-6 transition-colors border-gold-500 bg-gold-500/5`}>
                     <h3 className="mb-2 text-sm text-gray-300">Day Rent Plan Estimate</h3>
                     <div className="mb-1 text-4xl font-bold text-white">
                         <span className="text-gold-400">₹</span>{dayRentTotal.toLocaleString('en-IN')}
                     </div>
                     <p className="text-xs text-gray-400 line-clamp-1">{selectedVehicle.name}</p>
-                    <p className="text-xs text-gray-500 mt-1">Rent (₹{rentPerDay}) + Fuel ({distance}km @ ₹{fuelRate})</p>
-                </div>
-
-                {/* Per KM Plan Card */}
-                <div className={`relative flex flex-col justify-center rounded-xl border p-6 transition-colors ${isPerKmCheaper ? 'border-gold-500 bg-gold-500/5' : 'border-gray-700 bg-gray-800/30'}`}>
-                    {isPerKmCheaper && (
-                        <span className="absolute right-4 top-4 rounded bg-[#332A15] px-2.5 py-1 text-xs font-semibold text-gold-400">
-                            Cheaper for this trip
-                        </span>
-                    )}
-                    <div className="mb-4">
-                        <span className="inline-flex rounded-lg bg-[#1a1d24] px-3 py-1.5 text-xs font-bold tracking-widest text-white border border-gray-800">
-                            PER KM PLAN
-                        </span>
-                    </div>
-                    <div className="mb-1 text-5xl font-extrabold text-white tracking-tight flex items-baseline">
-                        ₹{kmRate}<span className="text-xl font-medium text-gray-400 ml-1">/km</span>
-                    </div>
-                    <p className="text-base text-white mt-1">+ ₹{driverBeta} Driver beta</p>
+                    <p className="text-xs text-gray-500 mt-1">Rent (₹{rentPerDay}/day × {duration} day{duration > 1 ? 's' : ''}) + Fuel ({distance}km @ ₹{fuelRate}/km)</p>
                 </div>
             </div>
 

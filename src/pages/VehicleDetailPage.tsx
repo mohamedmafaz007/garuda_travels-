@@ -657,14 +657,23 @@ export default function VehicleDetailPage() {
               )}
 
               {/* Direct Help shortcuts */}
-              <div className="mt-6 grid grid-cols-2 gap-3 border-t border-slate-100 pt-5">
-                <a
-                  href="tel:+919626138168"
-                  className="flex items-center justify-center gap-2 rounded-xl bg-slate-100 hover:bg-slate-200 py-3 text-xs font-bold text-navy-800 transition-all"
-                >
-                  <Phone className="h-4 w-4 text-navy-700" />
-                  <span>Call Dispatch</span>
-                </a>
+              <div className="mt-6 grid grid-cols-1 gap-3 border-t border-slate-100 pt-5">
+                <div className="grid grid-cols-2 gap-3">
+                  <a
+                    href="tel:+919626138168"
+                    className="flex items-center justify-center gap-2 rounded-xl bg-slate-100 hover:bg-slate-200 py-3 text-xs font-bold text-navy-800 transition-all"
+                  >
+                    <Phone className="h-4 w-4 text-navy-700" />
+                    <span>+91 96261 38168</span>
+                  </a>
+                  <a
+                    href="tel:+919363456631"
+                    className="flex items-center justify-center gap-2 rounded-xl bg-slate-100 hover:bg-slate-200 py-3 text-xs font-bold text-navy-800 transition-all"
+                  >
+                    <Phone className="h-4 w-4 text-navy-700" />
+                    <span>+91 93634 56631</span>
+                  </a>
+                </div>
                 <a
                   href={`https://wa.me/916382863873?text=${whatsappMessage}`}
                   target="_blank"

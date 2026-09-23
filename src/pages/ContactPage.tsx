@@ -12,20 +12,16 @@ export default function ContactPage() {
 
   return (
     <div className="pt-16">
-      <div className="relative h-[40vh] min-h-[300px] overflow-hidden bg-navy-900">
-        <img
-          src="https://images.pexels.com/photos/38115532/pexels-photo-38115532.jpeg?auto=compress&cs=tinysrgb&w=1920&q=90"
-          alt="Mountain road in South India"
-          className="h-full w-full object-cover object-[center_65%] opacity-60"
-        />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center">
-            <span className="text-sm font-bold tracking-[0.2em] text-gold-300 uppercase">Contact</span>
-            <h1 className="mt-3 font-display text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
-              Get In Touch
-            </h1>
-            <p className="mt-3 text-lg text-white/80">Your Journey. Our Responsibility.</p>
-          </div>
+      <div className="relative h-[40vh] min-h-[300px] overflow-hidden bg-navy-950 flex flex-col items-center justify-center">
+        <div className="text-center flex flex-col items-center">
+          <img
+            src="/images/logo.png"
+            alt="Garuda Travels"
+            className="h-28 w-auto object-contain filter drop-shadow-[0_4px_16px_rgba(212,175,55,0.45)] mb-6"
+          />
+          <p className="mt-2 text-sm sm:text-lg md:text-xl font-bold tracking-[0.15em] text-gold-400 uppercase">
+            Your Journey Our Responsibility
+          </p>
         </div>
       </div>
       <ContactForm />

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Car, Clock, Check } from 'lucide-react';
+import { Car, Clock, Check, Phone, MapPin } from 'lucide-react';
 import { useToast } from '@/context/ToastContext';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { vehicles } from '@/data/mockData';
@@ -74,22 +74,28 @@ export default function CabBooking() {
         <div className={`reveal ${revealed ? 'revealed' : ''} mt-14 rounded-3xl bg-white p-6 shadow-2xl sm:p-8 lg:p-10`} style={{ transitionDelay: '0.1s' }}>
           <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             <div className="flex flex-col gap-1.5">
-              <label className="text-xs font-semibold text-navy-700">Pickup Location</label>
+              <label className="flex items-center gap-1.5 text-xs font-semibold text-navy-700">
+                <MapPin className="h-3.5 w-3.5 text-gold-600" />
+                Pickup Area
+              </label>
               <input
                 type="text"
                 value={form.pickup}
                 onChange={(e) => setForm({ ...form, pickup: e.target.value })}
-                placeholder="e.g. Madurai"
+                placeholder="e.g. Madurai, Chennai..."
                 className="rounded-xl border border-navy-200 bg-navy-50/50 px-4 py-3 text-sm font-medium text-navy-800 outline-none transition-all focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20"
               />
             </div>
             <div className="flex flex-col gap-1.5">
-              <label className="text-xs font-semibold text-navy-700">Drop Location</label>
+              <label className="flex items-center gap-1.5 text-xs font-semibold text-navy-700">
+                <MapPin className="h-3.5 w-3.5 text-gold-600" />
+                Destination
+              </label>
               <input
                 type="text"
                 value={form.drop}
                 onChange={(e) => setForm({ ...form, drop: e.target.value })}
-                placeholder="e.g. Rameshwaram"
+                placeholder="e.g. Ooty, Rameshwaram..."
                 className="rounded-xl border border-navy-200 bg-navy-50/50 px-4 py-3 text-sm font-medium text-navy-800 outline-none transition-all focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20"
               />
             </div>
@@ -149,7 +155,7 @@ export default function CabBooking() {
                 ))}
               </select>
             </div>
-            <div className="mt-6 flex justify-center sm:col-span-2 lg:col-span-3">
+            <div className="mt-6 col-span-full flex flex-wrap justify-center items-center gap-3">
               <button
                 type="submit"
                 className="flex items-center gap-2 rounded-full bg-gradient-to-r from-gold-400 to-gold-500 px-10 py-4 text-sm font-bold text-navy-900 shadow-lg shadow-gold-500/30 transition-all hover:-translate-y-0.5 hover:shadow-xl"
@@ -157,6 +163,20 @@ export default function CabBooking() {
                 <Car className="h-5 w-5" />
                 Get Cab Quote
               </button>
+              <a
+                href="tel:+919626138168"
+                className="flex items-center gap-2 rounded-full bg-white/10 border border-white/20 px-6 py-4 text-sm font-bold text-white transition-all hover:bg-white/20"
+              >
+                <Phone className="h-5 w-5" />
+                +91 96261 38168
+              </a>
+              <a
+                href="tel:+919363456631"
+                className="flex items-center gap-2 rounded-full bg-white/10 border border-white/20 px-6 py-4 text-sm font-bold text-white transition-all hover:bg-white/20"
+              >
+                <Phone className="h-5 w-5" />
+                +91 93634 56631
+              </a>
             </div>
           </form>
 

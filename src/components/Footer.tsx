@@ -17,7 +17,7 @@ export default function Footer() {
             </p>
             <div className="flex gap-3">
               {[
-                { icon: Instagram, href: 'https://instagram.com', label: 'Instagram' },
+                { icon: Instagram, href: 'https://www.instagram.com/garuda_travels_58?stkn=OWNnanM4bXNsOXE5', label: 'Instagram' },
                 { icon: Facebook, href: 'https://facebook.com', label: 'Facebook' },
                 { icon: Youtube, href: 'https://youtube.com', label: 'YouTube' },
                 { icon: MessageCircle, href: 'https://wa.me/916382863873?text=Hi%20GARUDA%20TRAVELS,%20I%20have%20an%20enquiry', label: 'WhatsApp' },
@@ -103,9 +103,9 @@ export default function Footer() {
                 <Phone className="h-4 w-4 shrink-0 mt-0.5" />
                 <span>+91 93634 56631</span>
               </a>
-              <a href="mailto:garudatravels@gmail.com" className="flex items-start gap-3 text-sm text-navy-300 hover:text-gold-400 transition-colors">
+              <a href="mailto:garudatravels52@gmail.com" className="flex items-start gap-3 text-sm text-navy-300 hover:text-gold-400 transition-colors">
                 <Mail className="h-4 w-4 shrink-0 mt-0.5" />
-                <span>garudatravels@gmail.com</span>
+                <span>garudatravels52@gmail.com</span>
               </a>
               <a
                 href="https://www.google.com/maps/search/?api=1&query=5%2F434-D%2C+Thiruvalluvar+Nagar%2C+Thirunagar%2C+Madurai+-+625006"

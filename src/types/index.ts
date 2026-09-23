@@ -30,6 +30,8 @@ export interface VehicleTariff {
   dayRent: number;
   fuelPerKm: number;
   perKmRate: number;
+  perKmRate350below?: number;
+  perKmRate350above?: number;
   driverBeta: number;
   minKm: number;
 }

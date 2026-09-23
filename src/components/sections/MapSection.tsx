@@ -106,19 +106,26 @@ export default function MapSection() {
               </div>
             </div>
 
-            <div className="mt-8 flex gap-2">
+            <div className="mt-8 flex flex-col gap-2">
               <a
                 href="tel:+919626138168"
-                className="flex-1 flex items-center justify-center gap-2 rounded-xl bg-white/10 hover:bg-white/20 py-3 text-xs font-bold text-white transition-all"
+                className="flex items-center justify-center gap-2 rounded-xl bg-white/10 hover:bg-white/20 py-3 text-xs font-bold text-white transition-all"
               >
                 <Phone className="h-4 w-4" />
-                <span>Call Now</span>
+                <span>+91 96261 38168</span>
+              </a>
+              <a
+                href="tel:+919363456631"
+                className="flex items-center justify-center gap-2 rounded-xl bg-white/10 hover:bg-white/20 py-3 text-xs font-bold text-white transition-all"
+              >
+                <Phone className="h-4 w-4" />
+                <span>+91 93634 56631</span>
               </a>
               <a
                 href="https://wa.me/916382863873?text=Hi%20GARUDA%20TRAVELS,%20I'd%20like%20to%20visit%20your%20office%20in%20Thirunagar,%20Madurai."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-2 rounded-xl bg-green-500/20 hover:bg-green-500/30 text-green-300 border border-green-500/30 py-3 text-xs font-bold transition-all"
+                className="flex items-center justify-center gap-2 rounded-xl bg-green-500/20 hover:bg-green-500/30 text-green-300 border border-green-500/30 py-3 text-xs font-bold transition-all"
               >
                 <MessageCircle className="h-4 w-4" />
                 <span>WhatsApp</span>

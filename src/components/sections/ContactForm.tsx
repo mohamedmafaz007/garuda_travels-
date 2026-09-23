@@ -12,7 +12,9 @@ export default function ContactForm() {
     name: '',
     phone: '',
     email: '',
-    destination: '',
+    pickupArea: '',
+    destinationArea: '',
+    tripType: 'One Way',
     date: '',
     travelers: '2',
     message: '',
@@ -33,7 +35,9 @@ export default function ContactForm() {
       `👤 Name: ${form.name}`,
       `📞 Phone: ${form.phone}`,
       form.email ? `✉️ Email: ${form.email}` : '',
-      form.destination ? `📍 Destination: ${form.destination}` : '',
+      form.pickupArea ? `📍 Pickup: ${form.pickupArea}` : '',
+      form.destinationArea ? `🎯 Destination: ${form.destinationArea}` : '',
+      form.tripType ? `🔄 Trip Type: ${form.tripType}` : '',
       form.date ? `📅 Travel Date: ${form.date}` : '',
       form.travelers ? `👥 Travelers: ${form.travelers}` : '',
       form.message ? `💬 Message: ${form.message}` : '',
@@ -48,7 +52,7 @@ export default function ContactForm() {
 
   const resetForm = () => {
     setSubmitted(false);
-    setForm({ name: '', phone: '', email: '', destination: '', date: '', travelers: '2', message: '' });
+    setForm({ name: '', phone: '', email: '', pickupArea: '', destinationArea: '', tripType: 'One Way', date: '', travelers: '2', message: '' });
   };
 
   return (
@@ -83,7 +87,7 @@ export default function ContactForm() {
                 { icon: Phone, label: 'Primary Phone', value: '+91 96261 38168', href: 'tel:+919626138168' },
                 { icon: Phone, label: 'Secondary Phone', value: '+91 93634 56631', href: 'tel:+919363456631' },
                 { icon: MessageCircle, label: 'WhatsApp', value: '+91 63828 63873', href: 'https://wa.me/916382863873?text=Hi%20GARUDA%20TRAVELS,%20I%20have%20an%20enquiry' },
-                { icon: Mail, label: 'Email', value: 'garudatravels@gmail.com', href: 'mailto:garudatravels@gmail.com' },
+                { icon: Mail, label: 'Email', value: 'garudatravels52@gmail.com', href: 'mailto:garudatravels52@gmail.com' },
                 {
                   icon: MapPin,
                   label: 'Location',
@@ -164,30 +168,54 @@ export default function ContactForm() {
                       />
                     </div>
                   </div>
-                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                    <div className="flex flex-col gap-1.5">
-                      <label className="text-xs font-semibold text-navy-700">Email</label>
-                      <input
-                        type="email"
-                        value={form.email}
-                        onChange={(e) => setForm({ ...form, email: e.target.value })}
-                        placeholder="you@email.com"
-                        className="rounded-xl border border-navy-200 bg-white px-4 py-3 text-sm font-medium text-navy-800 outline-none transition-all focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20"
-                      />
-                    </div>
-                    <div className="flex flex-col gap-1.5">
-                      <label className="text-xs font-semibold text-navy-700">Destination</label>
-                      <select
-                        value={form.destination}
-                        onChange={(e) => setForm({ ...form, destination: e.target.value })}
-                        className="rounded-xl border border-navy-200 bg-white px-4 py-3 text-sm font-medium text-navy-800 outline-none transition-all focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20"
-                      >
-                        <option value="">Select Destination</option>
-                        {destinations.map((d) => (
-                          <option key={d.id} value={d.name}>{d.name}</option>
-                        ))}
-                      </select>
-                    </div>
+                  <div className="flex flex-col gap-1.5">
+                    <label className="text-xs font-semibold text-navy-700">Email (Optional)</label>
+                    <input
+                      type="email"
+                      value={form.email}
+                      onChange={(e) => setForm({ ...form, email: e.target.value })}
+                      placeholder="you@email.com"
+                      className="rounded-xl border border-navy-200 bg-white px-4 py-3 text-sm font-medium text-navy-800 outline-none transition-all focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20"
+                    />
+                  </div>
+                  <div className="flex flex-col gap-1.5">
+                    <label className="flex items-center gap-1.5 text-xs font-semibold text-navy-700">
+                      <MapPin className="h-3.5 w-3.5 text-gold-600" />
+                      Pickup Area
+                    </label>
+                    <input
+                      type="text"
+                      value={form.pickupArea}
+                      onChange={(e) => setForm({ ...form, pickupArea: e.target.value })}
+                      placeholder="e.g. Madurai, Chennai..."
+                      className="rounded-xl border border-navy-200 bg-white px-4 py-3 text-sm font-medium text-navy-800 outline-none transition-all focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20"
+                    />
+                  </div>
+                  <div className="flex flex-col gap-1.5">
+                    <label className="flex items-center gap-1.5 text-xs font-semibold text-navy-700">
+                      <MapPin className="h-3.5 w-3.5 text-gold-600" />
+                      Destination
+                    </label>
+                    <input
+                      type="text"
+                      value={form.destinationArea}
+                      onChange={(e) => setForm({ ...form, destinationArea: e.target.value })}
+                      placeholder="e.g. Ooty, Rameshwaram..."
+                      className="rounded-xl border border-navy-200 bg-white px-4 py-3 text-sm font-medium text-navy-800 outline-none transition-all focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20"
+                    />
+                  </div>
+                  <div className="flex flex-col gap-1.5">
+                    <label className="flex items-center gap-1.5 text-xs font-semibold text-navy-700">
+                      <span className="text-gold-600">⇄</span> Trip Type
+                    </label>
+                    <select
+                      value={form.tripType}
+                      onChange={(e) => setForm({ ...form, tripType: e.target.value })}
+                      className="rounded-xl border border-navy-200 bg-white px-4 py-3 text-sm font-medium text-navy-800 outline-none transition-all focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20"
+                    >
+                      <option value="One Way">One Way</option>
+                      <option value="Round Trip">Round Trip</option>
+                    </select>
                   </div>
                   <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                     <div className="flex flex-col gap-1.5">
