@@ -167,12 +167,6 @@ export default function Hero() {
                     >
                       <option>One Way</option>
                       <option>Round Trip</option>
-                      <option>Tour Package</option>
-                      <option>Cab Service</option>
-                      <option>Temple Tour</option>
-                      <option>Honeymoon Trip</option>
-                      <option>Family Holiday</option>
-                      <option>Airport Transfer</option>
                     </select>
                     <ChevronDown className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-navy-400" />
                   </div>
