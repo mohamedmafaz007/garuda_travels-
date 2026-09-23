@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Prevent crawling of some common non-SEO paths if they ever exist
+Disallow: /admin
+Disallow: /api
+Disallow: /*?*
+
+# Allow Googlebot specifically to crawl image and CSS files
+User-agent: Googlebot
+Allow: /
+
+# Sitemap
+Sitemap: https://www.garudatravelsmadurai.com/sitemap.xml

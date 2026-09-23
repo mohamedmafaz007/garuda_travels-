@@ -1,21 +1,31 @@
 import { useState, useEffect } from 'react';
-import { useParams, Link, useLocation } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Star, Clock, Check, X, IndianRupee, MapPin, Car, Hotel, Info } from 'lucide-react';
 import { packages } from '@/data/mockData';
 import { useToast } from '@/context/ToastContext';
 import QuoteCTA from '@/components/sections/QuoteCTA';
+import { useSEO } from '@/hooks/useSEO';
+
+const BASE_URL = 'https://www.garudatravelsmadurai.com';
+
+function PackageSEO({ pkg }: { pkg: any }) {
+  useSEO({
+    title: `${pkg.title} | Madurai Tour Packages | Garuda Travels`,
+    description: `Book the ${pkg.title} (${pkg.duration}) with Garuda Travels Madurai. Starting from ₹${pkg.price.toLocaleString('en-IN')}. Highlights: ${pkg.highlights.slice(0, 3).join(', ')}.`,
+    canonical: `/packages/${pkg.id}`,
+    keywords: `${pkg.title.toLowerCase()}, tour package from Madurai, ${pkg.duration} Madurai package, South India tour package, Madurai travel package`,
+    ogImage: pkg.image,
+  });
+  return null;
+}
 
 export default function PackageDetailPage() {
   const { id } = useParams<{ id: string }>();
-  const location = useLocation();
   const { showToast } = useToast();
   const pkg = packages.find((p) => p.id === id);
 
-  useEffect(() => {
-    if (pkg) {
-      document.title = `${pkg.title} | GARUDA TRAVELS Packages`;
-    }
-  }, [pkg, location]);
+  // Scroll management handled globally
+  useEffect(() => {}, [pkg]);
 
   if (!pkg) {
     return (
@@ -30,9 +40,11 @@ export default function PackageDetailPage() {
 
   return (
     <div className="pt-16">
+      <PackageSEO pkg={pkg} />
+
       {/* Hero */}
       <div className="relative h-[50vh] min-h-[350px] overflow-hidden">
-        <img src={pkg.image} alt={pkg.title} className="h-full w-full object-cover" />
+        <img src={pkg.image} alt={`${pkg.title} - Garuda Travels Tour Package from Madurai`} className="h-full w-full object-cover" width={1920} height={900} loading="eager" />
         <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-navy-950/30 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-10">
           <Link to="/packages" className="inline-flex items-center gap-2 text-sm font-medium text-white/80 hover:text-gold-300 transition-colors">
@@ -61,6 +73,15 @@ export default function PackageDetailPage() {
 
       {/* Content */}
       <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
+        {/* Breadcrumb (visible) */}
+        <nav aria-label="Breadcrumb" className="mb-8 flex items-center gap-2 text-sm text-navy-500">
+          <Link to="/" className="hover:text-gold-600 transition-colors">Home</Link>
+          <span>/</span>
+          <Link to="/packages" className="hover:text-gold-600 transition-colors">Tour Packages</Link>
+          <span>/</span>
+          <span className="text-navy-800 font-medium">{pkg.title}</span>
+        </nav>
+
         <section>
           <h2 className="font-display text-xl font-bold text-navy-800">Overview</h2>
           <p className="mt-2 text-base leading-relaxed text-navy-600">{pkg.overview}</p>
@@ -123,12 +144,17 @@ export default function PackageDetailPage() {
         <section className="mt-8">
           <h2 className="flex items-center gap-2 font-display text-xl font-bold text-navy-800">
             <Car className="h-5 w-5 text-gold-600" />
-            Vehicle Options
+            Vehicle Options from Madurai
           </h2>
           <div className="mt-3 flex flex-wrap gap-2">
             {pkg.vehicleOptions.map((v) => (
               <span key={v} className="rounded-lg bg-navy-50 px-3 py-1.5 text-sm font-medium text-navy-700">{v}</span>
             ))}
+          </div>
+          <div className="mt-3">
+             <Link to="/vehicles" className="text-sm font-semibold text-gold-600 hover:text-gold-700 transition-colors">
+                View all our Madurai cabs &rarr;
+             </Link>
           </div>
         </section>
 
@@ -149,7 +175,7 @@ export default function PackageDetailPage() {
         </section>
 
         <div className="mt-10 rounded-3xl bg-gradient-to-r from-navy-800 to-navy-900 p-8 text-center">
-          <h3 className="font-display text-xl font-bold text-white">Ready to book this package?</h3>
+          <h3 className="font-display text-xl font-bold text-white">Ready to book this package from Madurai?</h3>
           <p className="mt-2 text-sm text-navy-200">
             Starting from <span className="font-sans font-bold text-gold-300">₹{pkg.price.toLocaleString('en-IN')}</span> — {pkg.duration}
           </p>
@@ -165,6 +191,51 @@ export default function PackageDetailPage() {
           </a>
         </div>
       </div>
+      
+      {/* Breadcrumb Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.garudatravelsmadurai.com/' },
+              { '@type': 'ListItem', position: 2, name: 'Tour Packages', item: 'https://www.garudatravelsmadurai.com/packages' },
+              { '@type': 'ListItem', position: 3, name: pkg.title, item: `https://www.garudatravelsmadurai.com/packages/${pkg.id}` },
+            ],
+          }),
+        }}
+      />
+      
+      {/* Product Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Product',
+            name: pkg.title,
+            image: pkg.image,
+            description: pkg.overview,
+            aggregateRating: {
+              '@type': 'AggregateRating',
+              ratingValue: pkg.rating.toString(),
+              reviewCount: pkg.reviewCount.toString()
+            },
+            offers: {
+              '@type': 'Offer',
+              priceCurrency: 'INR',
+              price: pkg.price.toString(),
+              availability: 'https://schema.org/InStock',
+              seller: {
+                '@type': 'Organization',
+                name: 'Garuda Travels Madurai'
+              }
+            }
+          }),
+        }}
+      />
 
       <QuoteCTA />
     </div>
