@@ -144,8 +144,7 @@ export function VehicleCard({ vehicle, onBook }: { vehicle: Vehicle; onBook?: (v
               WhatsApp
             </a>
             <Link
-              to={`/vehicles/${vehicle.id}`}
-              onClick={() => onBook?.(vehicle)}
+              to={`/vehicles/${vehicle.id}#quick-reservation`}
               className="flex items-center justify-center rounded-xl bg-gradient-to-r from-gold-400 to-gold-500 py-2.5 text-[11px] font-bold text-navy-900 transition-all hover:shadow-lg hover:from-gold-300 hover:to-gold-400"
             >
               Book Vehicle
@@ -157,7 +156,7 @@ export function VehicleCard({ vehicle, onBook }: { vehicle: Vehicle; onBook?: (v
   );
 }
 
-export default function FleetSection({ onBook, limit }: { onBook: (v: Vehicle) => void; limit?: number }) {
+export default function FleetSection({ onBook, limit }: { onBook?: (v: Vehicle) => void; limit?: number }) {
   const [activeType, setActiveType] = useState<string>('ALL');
   const { ref, revealed } = useScrollReveal();
 
